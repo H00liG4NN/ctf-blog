@@ -1,36 +1,23 @@
 title: Pwntagonist
-tagline: "Cybersecurity journey, CTF writeups & pentesting notes"
 description: "Cybersecurity journey, CTF writeups & pentesting notes"
 url: ""
 baseurl: ""
 
-theme: jekyll-theme-chirpy
+theme: minima
 
-author:
-  name: Pwntagonist
+minima:
+  skin: dark
+
+author: Pwntagonist
 
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: post
-      toc: true
-      comments: false
+show_excerpts: true
 
 timezone: Asia/Jerusalem
 
-paginate: 10
-
-nav_links:
-  - title: Home
-    url: /
-  - title: About
-    url: /about/
-  - title: LinkedIn
-    url: https://www.linkedin.com/search/results/people/?keywords=citadel%20cyber%20security&origin=SWITCH_SEARCH_VERTICAL&spellCorrectionEnabled=false
-    external: true
+header_pages:
+  - index.md
+  - about.md
