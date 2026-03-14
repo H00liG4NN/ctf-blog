@@ -1,4 +1,4 @@
-title: "H00liG4NN's CTF Blog"
+title: "Pwntagonist"
 description: "Cybersecurity journey, CTF writeups & pentesting notes"
 url: ""
 baseurl: ""
@@ -10,6 +10,6 @@ plugins:
 minima:
   skin: dark
 
-author: H00liG4NN
+author: Pwntagonist
 
 show_excerpts: true
