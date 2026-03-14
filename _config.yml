@@ -10,7 +10,6 @@ plugins:
 minima:
   skin: dark
 
-author:
-  name: H00liG4NN
+author: H00liG4NN
 
 show_excerpts: true
