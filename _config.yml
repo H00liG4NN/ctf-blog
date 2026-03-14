@@ -1,23 +1,15 @@
-title: Pwntagonist
+title: "Pwntagonist"
 description: "Cybersecurity journey, CTF writeups & pentesting notes"
 url: ""
 baseurl: ""
-
 theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 
 minima:
   skin: dark
 
 author: Pwntagonist
 
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-
 show_excerpts: true
-
-timezone: Asia/Jerusalem
-
-header_pages:
-  - index.md
-  - about.md
