@@ -25,3 +25,12 @@ defaults:
 timezone: Asia/Jerusalem
 
 paginate: 10
+
+nav_links:
+  - title: Home
+    url: /
+  - title: About
+    url: /about/
+  - title: LinkedIn
+    url: https://www.linkedin.com/search/results/people/?keywords=citadel%20cyber%20security&origin=SWITCH_SEARCH_VERTICAL&spellCorrectionEnabled=false
+    external: true
