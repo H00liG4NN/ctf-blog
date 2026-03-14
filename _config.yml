@@ -1,0 +1,16 @@
+title: "H00liG4NN's CTF Blog"
+description: "Cybersecurity journey, CTF writeups & pentesting notes"
+url: ""
+baseurl: ""
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+minima:
+  skin: dark
+
+author:
+  name: H00liG4NN
+
+show_excerpts: true
