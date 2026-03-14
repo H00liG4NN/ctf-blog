@@ -2,14 +2,26 @@ title: "Pwntagonist"
 description: "Cybersecurity journey, CTF writeups & pentesting notes"
 url: ""
 baseurl: ""
-theme: minima
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
 
-minima:
-  skin: dark
+theme: jekyll-gitbook
 
 author: Pwntagonist
 
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-toc
+
+# GitBook style settings
+toc:
+  enabled: true
+  h_min: 1
+  h_max: 3
+
+paginate: 10
+
+# Sidebar structure
 show_excerpts: true
+
+# Syntax highlighting
+highlighter: rouge

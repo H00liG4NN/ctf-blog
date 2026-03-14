@@ -1,62 +1,43 @@
 ---
 ---
 
-@import "minima";
-
-// Dark blue theme override
-$background-color: #0a0e1a !default;
-$text-color: #c9d1d9 !default;
-$brand-color: #58a6ff !default;
-$grey-color: #8b949e !default;
-$grey-color-dark: #c9d1d9 !default;
-$grey-color-light: #21262d !default;
+// Custom overrides for dark blue hacker feel
+:root {
+  --color-sidebar-bg: #0d1117;
+  --color-main-bg: #0a0e1a;
+  --color-text: #c9d1d9;
+  --color-link: #58a6ff;
+  --color-heading: #e6edf3;
+  --color-code-bg: #161b22;
+  --color-border: #30363d;
+}
 
 body {
   background-color: #0a0e1a;
   color: #c9d1d9;
 }
 
-.site-header {
-  background-color: #0d1117;
-  border-bottom: 1px solid #30363d;
-}
-
-.site-footer {
-  background-color: #0d1117;
-  border-top: 1px solid #30363d;
-  color: #8b949e;
-}
-
-.site-title, .site-title:visited {
-  color: #58a6ff;
-}
-
-.site-nav .page-link {
-  color: #c9d1d9;
-}
-
 a {
   color: #58a6ff;
-  &:hover {
-    color: #79c0ff;
-  }
+  &:hover { color: #79c0ff; }
 }
 
-.post-title, h1, h2, h3, h4 {
+h1, h2, h3, h4 {
   color: #e6edf3;
 }
 
-.post-meta {
-  color: #8b949e;
-}
-
 pre, code {
-  background-color: #161b22;
-  border: 1px solid #30363d;
+  background-color: #161b22 !important;
   color: #79c0ff;
+  border: 1px solid #30363d;
+  border-radius: 6px;
 }
 
-.highlight {
-  background-color: #161b22;
-  border-radius: 6px;
+.book-summary {
+  background-color: #0d1117 !important;
+  border-right: 1px solid #30363d;
+}
+
+.book-body {
+  background-color: #0a0e1a !important;
 }

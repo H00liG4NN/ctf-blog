@@ -1,17 +1,19 @@
 ---
 layout: post
 title: "HTB: Example Machine Writeup"
+author: Pwntagonist
 date: 2026-03-14
-categories: [HTB]
 tags: [HTB, linux, privesc, ctf]
 ---
 
 ## Machine Info
 
-- **Platform:** HackTheBox
-- **OS:** Linux
-- **Difficulty:** Easy
-- **Author:** PwnTagonist
+| Field | Details |
+|---|---|
+| **Platform** | HackTheBox |
+| **OS** | Linux |
+| **Difficulty** | Easy |
+| **Author** | Pwntagonist |
 
 ## Enumeration
 
