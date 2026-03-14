@@ -11,6 +11,7 @@ tags: [HTB, linux, privesc, ctf]
 - **Platform:** HackTheBox
 - **OS:** Linux
 - **Difficulty:** Easy
+- **Author:** PwnTagonist
 
 ## Enumeration
 
