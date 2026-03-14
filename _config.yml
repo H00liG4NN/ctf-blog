@@ -1,27 +1,27 @@
-title: "Pwntagonist"
+title: Pwntagonist
+tagline: "Cybersecurity journey, CTF writeups & pentesting notes"
 description: "Cybersecurity journey, CTF writeups & pentesting notes"
 url: ""
 baseurl: ""
 
-theme: jekyll-gitbook
+theme: jekyll-theme-chirpy
 
-author: Pwntagonist
+author:
+  name: Pwntagonist
 
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-toc
 
-# GitBook style settings
-toc:
-  enabled: true
-  h_min: 1
-  h_max: 3
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      toc: true
+      comments: false
+
+timezone: Asia/Jerusalem
 
 paginate: 10
-
-# Sidebar structure
-show_excerpts: true
-
-# Syntax highlighting
-highlighter: rouge
