@@ -1,10 +1,10 @@
 ---
+layout: default
 title: Windows Machines
-parent: HTB Writeups
-nav_order: 2
-has_children: true
+description: HackTheBox Windows machine writeups
 ---
 
-# Windows Machines
+| Machine | Difficulty | Status |
+|---------|------------|--------|
 
-HTB Windows machine writeups.
+_No writeups yet. Check back soon..._

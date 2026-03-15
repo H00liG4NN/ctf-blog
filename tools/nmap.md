@@ -1,26 +1,37 @@
 ---
+layout: default
 title: Nmap Cheatsheet
-parent: Tools & Notes
-nav_order: 1
+description: Quick reference for Nmap scanning techniques
 ---
-
-# Nmap Cheatsheet
 
 ## Basic Scans
 
 ```bash
-# Full port scan
-nmap -p- --min-rate 5000 -oN nmap/full 10.10.10.x
+nmap -sV -sC -oN scan.txt <IP>       # Default scripts + version
+nmap -p- --min-rate 5000 <IP>        # All ports fast
+nmap -sU -top-ports 20 <IP>          # Top 20 UDP ports
+```
 
-# Service + script scan
-nmap -sC -sV -p 22,80,443 -oN nmap/targeted 10.10.10.x
+## Service & Version Detection
 
-# UDP scan
-nmap -sU --top-ports 20 10.10.10.x
+```bash
+nmap -sV --version-intensity 9 <IP>  # Max version detection
+nmap -A <IP>                         # Aggressive (OS, version, scripts)
+```
+
+## NSE Scripts
+
+```bash
+nmap --script vuln <IP>              # Run vuln scripts
+nmap --script smb-enum-shares <IP>   # SMB enumeration
+nmap --script http-enum <IP>         # HTTP enumeration
 ```
 
 ## Output Formats
 
 ```bash
-nmap -oA output_all  # saves .nmap, .xml, .gnmap
+nmap -oN out.txt <IP>    # Normal
+nmap -oX out.xml <IP>    # XML
+nmap -oG out.gnmap <IP>  # Grepable
+nmap -oA out <IP>        # All formats
 ```

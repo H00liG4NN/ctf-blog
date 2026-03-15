@@ -1,10 +1,11 @@
 ---
+layout: default
 title: Linux Machines
-parent: HTB Writeups
-nav_order: 1
-has_children: true
+description: HackTheBox Linux machine writeups
 ---
 
-# Linux Machines
+| Machine | Difficulty | Status |
+|---------|------------|--------|
+| [Example Machine](example-machine) | <span class="badge easy">Easy</span> | ✅ Rooted |
 
-HTB Linux machine writeups.
+_More writeups coming soon..._
