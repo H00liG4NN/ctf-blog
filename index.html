@@ -37,6 +37,7 @@ layout: none
     .sidebar a.child { padding-left: 34px; font-size: 0.78rem; color: #3a3a3a; font-weight: 400; }
     .sidebar a.child:hover { color: var(--text-muted); }
     .sidebar-footer { padding: 14px 18px; border-top: 1px solid var(--divider); font-size: 0.68rem; color: #2a2a2a; font-family: 'JetBrains Mono', monospace; }
+    .linkedin-icon { width: 14px; height: 14px; display: inline-block; vertical-align: middle; }
     .main { margin-left: 260px; padding: 44px 52px; width: 100%; }
     .breadcrumb { font-size: 0.73rem; color: #3a3a3a; margin-bottom: 26px; font-family: 'JetBrains Mono', monospace; }
     .page-header { margin-bottom: 36px; }
@@ -50,32 +51,40 @@ layout: none
     .stat .lbl { font-size: 0.68rem; color: var(--text-muted); margin-top: 3px; text-transform: uppercase; letter-spacing: 0.5px; }
     .section-title { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
     .section-title::after { content: ''; flex: 1; height: 1px; background: var(--divider); }
-    .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-bottom: 36px; }
-    .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 8px; padding: 20px 18px; text-decoration: none; color: var(--text); transition: all 0.18s; display: block; }
-    .card:hover { border-color: var(--accent); background: #1a1111; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(224,82,82,0.08); }
-    .card .icon { font-size: 1.6rem; margin-bottom: 10px; }
-    .card .ctitle { font-weight: 600; font-size: 0.88rem; color: var(--text-bright); margin-bottom: 4px; }
-    .card .cdesc { font-size: 0.74rem; color: var(--text-muted); }
-    .card .cbadge { display: inline-block; margin-top: 10px; padding: 2px 7px; border-radius: 3px; font-size: 0.62rem; font-weight: 700; background: var(--accent-dim); color: var(--accent); font-family: 'JetBrains Mono', monospace; letter-spacing: 0.5px; }
-    .card .cbadge.thm { background: #1a2a1a; color: #4caf50; }
-    .recent-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
-    .recent-table th { text-align: left; padding: 9px 14px; color: #3a3a3a; font-weight: 600; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.6px; border-bottom: 1px solid var(--divider); }
-    .recent-table td { padding: 10px 14px; border-bottom: 1px solid var(--divider); color: var(--text); }
-    .recent-table tr:hover td { background: rgba(224,82,82,0.04); }
-    .recent-table a { color: var(--text-bright); text-decoration: none; font-weight: 500; }
-    .recent-table a:hover { color: var(--accent-bright); }
+
+    /* FILTER BARS */
+    .filters { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+    .filter-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .filter-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--section-label); min-width: 72px; font-family: 'JetBrains Mono', monospace; }
+    .filter-btn { padding: 4px 13px; border-radius: 4px; font-size: 0.76rem; font-weight: 600; background: #141414; border: 1px solid #2a2a2a; color: #606060; cursor: pointer; transition: all 0.13s; font-family: 'Inter', sans-serif; }
+    .filter-btn:hover { border-color: #4a4a4a; color: var(--text); }
+    .filter-btn.active { background: var(--accent-dim); border-color: var(--accent); color: var(--accent-bright); }
+    .filter-btn.f-all.active { background: #1c1c1c; border-color: #555; color: var(--text-bright); }
+
+    .filter-status { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding: 9px 14px; background: #111; border: 1px solid var(--divider); border-radius: 6px; }
+    .filter-status .count { font-size: 0.78rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; }
+    .filter-status .count span { color: var(--text-bright); font-weight: 700; }
+    .clear-btn { padding: 4px 12px; border-radius: 4px; font-size: 0.72rem; font-weight: 600; background: transparent; border: 1px solid #2a2a2a; color: #4a4a4a; cursor: pointer; transition: all 0.13s; font-family: 'Inter', sans-serif; }
+    .clear-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* WRITEUPS TABLE */
+    .writeups-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+    .writeups-table th { text-align: left; padding: 9px 14px; color: #3a3a3a; font-weight: 600; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.6px; border-bottom: 1px solid var(--divider); }
+    .writeups-table td { padding: 10px 14px; border-bottom: 1px solid var(--divider); color: var(--text); }
+    .writeups-table tr.writeup-row:hover td { background: rgba(224,82,82,0.04); }
+    .writeups-table tr.writeup-row.hidden { display: none; }
+    .writeups-table a { color: var(--text-bright); text-decoration: none; font-weight: 500; }
+    .writeups-table a:hover { color: var(--accent-bright); }
     .badge { padding: 2px 7px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; font-family: 'JetBrains Mono', monospace; }
     .badge.easy { background: #0d2010; color: #3fb950; }
     .badge.medium { background: #251a00; color: #d29922; }
     .badge.hard { background: #250a0a; color: #e05252; }
+    .badge.insane { background: #200a2a; color: #c084fc; }
     .badge.linux { background: #1a1a1a; color: #aaa; }
     .badge.windows { background: #1a1a1a; color: #aaa; }
-    .badge.web { background: #1a1a1a; color: #aaa; }
-    .badge.thm { background: #1a2a1a; color: #4caf50; }
-    code { background: #141414; color: #e05252; padding: 2px 6px; border-radius: 3px; font-size: 0.82rem; font-family: 'JetBrains Mono', monospace; border: 1px solid #1f1f1f; }
-    pre { background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 7px; padding: 16px; overflow-x: auto; margin: 14px 0; }
-    pre code { background: none; padding: 0; color: #d0d0d0; border: none; }
-    .linkedin-icon { width: 14px; height: 14px; display: inline-block; vertical-align: middle; }
+    .badge.htb { background: #1a2a1a; color: #4caf50; }
+    .badge.thm { background: #1a1f2a; color: #60a5fa; }
+    .no-results { text-align: center; padding: 40px 14px; color: var(--text-muted); font-size: 0.88rem; display: none; }
     @media (max-width: 768px) { .sidebar { display: none; } .main { margin-left: 0; padding: 24px 16px; } }
   </style>
 </head>
@@ -89,19 +98,15 @@ layout: none
     <div class="nav-body">
       <div class="nav-section">Navigation</div>
       <a href="/" class="active">🏠 Home</a>
-
       <div class="nav-section">HTB Writeups</div>
       <a href="/htb/linux/">🐧 Linux Machines</a>
       <a href="/htb/windows/">🪟 Windows Machines</a>
-
       <div class="nav-section">TryHackMe Writeups</div>
       <a href="/thm/red-team/">🚨 Red Team</a>
       <a href="/thm/blue-team/">🛡️ Blue Team</a>
       <a href="/thm/ctfs/">🚩 CTFs</a>
-
       <div class="nav-section">Tools &amp; Notes</div>
       <a href="/tools/nmap">📡 Nmap</a>
-
       <div class="nav-section">Info</div>
       <a href="/whoami">💻 whoami</a>
       <a href="https://www.linkedin.com/in/mati-hubenko-40720a2a7/" target="_blank">
@@ -110,7 +115,7 @@ layout: none
       </a>
       <a href="https://github.com/H00liG4NN" target="_blank">🐙 GitHub ↗</a>
     </div>
-    <div class="sidebar-footer">// pwntagonist &copy; 2026</div>
+    <div class="sidebar-footer">// pwntagonist © 2026</div>
   </nav>
 
   <main class="main">
@@ -121,38 +126,110 @@ layout: none
     </div>
 
     <div class="stats">
-      <div class="stat"><div class="val">0</div><div class="lbl">HTB Machines</div></div>
-      <div class="stat"><div class="val">0</div><div class="lbl">THM Rooms</div></div>
+      <div class="stat"><div class="val" id="stat-total">0</div><div class="lbl">Total Writeups</div></div>
+      <div class="stat"><div class="val" id="stat-htb">0</div><div class="lbl">HTB Machines</div></div>
+      <div class="stat"><div class="val" id="stat-thm">0</div><div class="lbl">THM Rooms</div></div>
       <div class="stat"><div class="val">1</div><div class="lbl">Cheatsheets</div></div>
-      <div class="stat"><div class="val">0</div><div class="lbl">Flags Captured</div></div>
     </div>
 
-    <div class="section-title">HackTheBox</div>
-    <div class="card-grid">
-      <a href="/htb/linux/" class="card"><div class="icon">🐧</div><div class="ctitle">Linux Machines</div><div class="cdesc">HTB Linux walkthroughs</div><span class="cbadge">HTB</span></a>
-      <a href="/htb/windows/" class="card"><div class="icon">🪟</div><div class="ctitle">Windows Machines</div><div class="cdesc">HTB Windows walkthroughs</div><span class="cbadge">HTB</span></a>
+    <div class="section-title">Writeups</div>
+
+    <div class="filters">
+      <div class="filter-row">
+        <span class="filter-label">Difficulty</span>
+        <button class="filter-btn f-all active" data-filter="difficulty" data-value="all">All</button>
+        <button class="filter-btn" data-filter="difficulty" data-value="easy">Easy</button>
+        <button class="filter-btn" data-filter="difficulty" data-value="medium">Medium</button>
+        <button class="filter-btn" data-filter="difficulty" data-value="hard">Hard</button>
+        <button class="filter-btn" data-filter="difficulty" data-value="insane">Insane</button>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">Platform</span>
+        <button class="filter-btn f-all active" data-filter="platform" data-value="all">All</button>
+        <button class="filter-btn" data-filter="platform" data-value="htb">HackTheBox</button>
+        <button class="filter-btn" data-filter="platform" data-value="thm">TryHackMe</button>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">OS</span>
+        <button class="filter-btn f-all active" data-filter="os" data-value="all">All</button>
+        <button class="filter-btn" data-filter="os" data-value="linux">Linux</button>
+        <button class="filter-btn" data-filter="os" data-value="windows">Windows</button>
+      </div>
     </div>
 
-    <div class="section-title">TryHackMe</div>
-    <div class="card-grid">
-      <a href="/thm/red-team/" class="card"><div class="icon">🚨</div><div class="ctitle">Red Team</div><div class="cdesc">Offensive security rooms</div><span class="cbadge thm">THM</span></a>
-      <a href="/thm/blue-team/" class="card"><div class="icon">🛡️</div><div class="ctitle">Blue Team</div><div class="cdesc">Defensive security rooms</div><span class="cbadge thm">THM</span></a>
-      <a href="/thm/ctfs/" class="card"><div class="icon">🚩</div><div class="ctitle">CTFs</div><div class="cdesc">CTF challenge writeups</div><span class="cbadge thm">THM</span></a>
+    <div class="filter-status">
+      <span class="count">Showing <span id="showing-count">0</span> of <span id="total-count">0</span> writeups</span>
+      <button class="clear-btn" onclick="clearFilters()">✕ Clear all filters</button>
     </div>
 
-    <div class="section-title">Tools</div>
-    <div class="card-grid">
-      <a href="/tools/nmap" class="card"><div class="icon">📡</div><div class="ctitle">Nmap Cheatsheet</div><div class="cdesc">Quick scan reference</div><span class="cbadge">TOOL</span></a>
-      <a href="/whoami" class="card"><div class="icon">💻</div><div class="ctitle">whoami</div><div class="cdesc">About Pwntagonist</div><span class="cbadge">INFO</span></a>
-    </div>
-
-    <div class="section-title">Recent Writeups</div>
-    <table class="recent-table">
-      <thead><tr><th>Machine / Challenge</th><th>Platform</th><th>Category</th><th>Difficulty</th></tr></thead>
-      <tbody>
-        <tr><td><a href="/htb/linux/example-machine">Example Machine</a></td><td>HTB</td><td><span class="badge linux">Linux</span></td><td><span class="badge easy">Easy</span></td></tr>
+    <table class="writeups-table">
+      <thead>
+        <tr>
+          <th>Machine / Challenge</th>
+          <th>Platform</th>
+          <th>OS</th>
+          <th>Difficulty</th>
+        </tr>
+      </thead>
+      <tbody id="writeups-body">
+        <!-- ADD NEW WRITEUP ROWS HERE -->
+        <!-- Format: <tr class="writeup-row" data-difficulty="easy|medium|hard|insane" data-platform="htb|thm" data-os="linux|windows"> -->
+        <tr class="writeup-row" data-difficulty="easy" data-platform="htb" data-os="linux">
+          <td><a href="/htb/linux/example-machine">Example Machine</a></td>
+          <td><span class="badge htb">HTB</span></td>
+          <td><span class="badge linux">Linux</span></td>
+          <td><span class="badge easy">Easy</span></td>
+        </tr>
       </tbody>
     </table>
+    <div class="no-results" id="no-results">🔍 No writeups match the selected filters.</div>
   </main>
+
+  <script>
+    const filters = { difficulty: 'all', platform: 'all', os: 'all' };
+
+    function applyFilters() {
+      const rows = document.querySelectorAll('.writeup-row');
+      let visible = 0;
+      rows.forEach(row => {
+        const match =
+          (filters.difficulty === 'all' || filters.difficulty === row.dataset.difficulty) &&
+          (filters.platform === 'all' || filters.platform === row.dataset.platform) &&
+          (filters.os === 'all' || filters.os === row.dataset.os);
+        row.classList.toggle('hidden', !match);
+        if (match) visible++;
+      });
+      document.getElementById('showing-count').textContent = visible;
+      document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
+    }
+
+    function updateStats() {
+      const rows = [...document.querySelectorAll('.writeup-row')];
+      document.getElementById('stat-total').textContent = rows.length;
+      document.getElementById('stat-htb').textContent = rows.filter(r => r.dataset.platform === 'htb').length;
+      document.getElementById('stat-thm').textContent = rows.filter(r => r.dataset.platform === 'thm').length;
+      document.getElementById('total-count').textContent = rows.length;
+      document.getElementById('showing-count').textContent = rows.length;
+    }
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const type = btn.dataset.filter;
+        filters[type] = btn.dataset.value;
+        document.querySelectorAll(`.filter-btn[data-filter="${type}"]`).forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        applyFilters();
+      });
+    });
+
+    function clearFilters() {
+      Object.keys(filters).forEach(k => filters[k] = 'all');
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.filter-btn.f-all').forEach(b => b.classList.add('active'));
+      applyFilters();
+    }
+
+    updateStats();
+  </script>
 </body>
 </html>
