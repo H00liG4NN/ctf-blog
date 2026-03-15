@@ -15,8 +15,8 @@ layout: none
       --card-bg: #141414; --card-border: #1f1f1f;
       --accent: #e05252; --accent-bright: #ff6b6b;
       --accent-glow: rgba(224,82,82,0.1);
-      --text: #e8e8e8; --text-muted: #888; --text-bright: #ffffff;
-      --section-label: #3a3a3a; --nav-hover: rgba(224,82,82,0.07); --divider: #1a1a1a;
+      --text: #e8e8e8; --text-muted: #aaa; --text-bright: #ffffff;
+      --section-label: #888; --nav-hover: rgba(224,82,82,0.07); --divider: #1a1a1a;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: var(--body-bg); color: var(--text); font-family: 'Inter', sans-serif; display: flex; min-height: 100vh; }
@@ -26,17 +26,17 @@ layout: none
     .logo { padding: 22px 20px 18px; border-bottom: 1px solid var(--divider); }
     .logo .name { font-size: 1.1rem; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; letter-spacing: -0.3px; }
     .logo .dot { color: var(--accent); }
-    .logo .tagline { font-size: 0.7rem; color: var(--text-muted); margin-top: 5px; }
+    .logo .tagline { font-size: 0.7rem; color: #aaa; margin-top: 5px; }
     .search-wrap { padding: 12px 14px; border-bottom: 1px solid var(--divider); }
-    .search-wrap input { width: 100%; background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 5px; padding: 7px 11px; color: var(--text); font-size: 0.81rem; font-family: inherit; outline: none; }
+    .search-wrap input { width: 100%; background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 5px; padding: 7px 11px; color: #fff; font-size: 0.81rem; font-family: inherit; outline: none; }
     .search-wrap input:focus { border-color: var(--accent); }
-    .search-wrap input::placeholder { color: #3a3a3a; }
+    .search-wrap input::placeholder { color: #555; }
     .nav-body { padding: 6px 0 24px; flex: 1; }
     .nav-section { padding: 14px 18px 4px; font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.3px; color: var(--section-label); }
-    .sidebar a { display: flex; align-items: center; gap: 8px; padding: 6px 18px; color: #888; text-decoration: none; font-size: 0.845rem; font-weight: 500; transition: all 0.13s; border-left: 2px solid transparent; }
-    .sidebar a:hover { color: var(--text-bright); background: var(--nav-hover); border-left-color: #3a1515; }
+    .sidebar a { display: flex; align-items: center; gap: 8px; padding: 6px 18px; color: #ccc; text-decoration: none; font-size: 0.845rem; font-weight: 500; transition: all 0.13s; border-left: 2px solid transparent; }
+    .sidebar a:hover { color: #fff; background: var(--nav-hover); border-left-color: #3a1515; }
     .sidebar a.active { color: var(--accent-bright); background: var(--accent-glow); border-left-color: var(--accent); }
-    .sidebar-footer { padding: 14px 18px; border-top: 1px solid var(--divider); font-size: 0.68rem; color: #2a2a2a; font-family: 'JetBrains Mono', monospace; }
+    .sidebar-footer { padding: 14px 18px; border-top: 1px solid var(--divider); font-size: 0.68rem; color: #666; font-family: 'JetBrains Mono', monospace; }
     .linkedin-icon { width: 14px; height: 14px; display: inline-block; vertical-align: middle; }
 
     /* MAIN */
@@ -100,7 +100,7 @@ layout: none
     @keyframes slideDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
     .panel-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
     .panel-row:last-child { margin-bottom: 0; }
-    .panel-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); min-width: 80px; font-family: 'JetBrains Mono', monospace; }
+    .panel-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #aaa; min-width: 80px; font-family: 'JetBrains Mono', monospace; }
 
     .filter-btn { padding: 4px 13px; border-radius: 5px; font-size: 0.76rem; font-weight: 700; cursor: pointer; transition: all 0.15s; font-family: 'Inter', sans-serif; border: 2px solid transparent; }
     .filter-btn:hover { transform: translateY(-1px); filter: brightness(1.15); }
@@ -122,18 +122,18 @@ layout: none
 
     /* STATUS BAR */
     .filter-status { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding: 9px 14px; background: #111; border: 1px solid var(--divider); border-radius: 6px; }
-    .filter-status .count { font-size: 0.78rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; }
-    .filter-status .count span { color: var(--text-bright); font-weight: 700; }
-    .clear-btn { padding: 4px 12px; border-radius: 4px; font-size: 0.72rem; font-weight: 600; background: transparent; border: 1px solid #333; color: #666; cursor: pointer; transition: all 0.13s; font-family: 'Inter', sans-serif; }
+    .filter-status .count { font-size: 0.78rem; color: #aaa; font-family: 'JetBrains Mono', monospace; }
+    .filter-status .count span { color: #fff; font-weight: 700; }
+    .clear-btn { padding: 4px 12px; border-radius: 4px; font-size: 0.72rem; font-weight: 600; background: transparent; border: 1px solid #333; color: #888; cursor: pointer; transition: all 0.13s; font-family: 'Inter', sans-serif; }
     .clear-btn:hover { border-color: var(--accent); color: var(--accent); }
 
     /* TABLE */
     .writeups-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
-    .writeups-table th { text-align: left; padding: 9px 14px; color: #666; font-weight: 600; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.6px; border-bottom: 1px solid var(--divider); }
-    .writeups-table td { padding: 11px 14px; border-bottom: 1px solid var(--divider); color: var(--text); }
+    .writeups-table th { text-align: left; padding: 9px 14px; color: #888; font-weight: 600; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.6px; border-bottom: 1px solid var(--divider); }
+    .writeups-table td { padding: 11px 14px; border-bottom: 1px solid var(--divider); color: #e8e8e8; }
     .writeups-table tr.writeup-row:hover td { background: rgba(224,82,82,0.04); }
     .writeups-table tr.writeup-row.hidden { display: none; }
-    .writeups-table a { color: var(--text-bright); text-decoration: none; font-weight: 600; }
+    .writeups-table a { color: #fff; text-decoration: none; font-weight: 600; }
     .writeups-table a:hover { color: var(--accent-bright); }
     .badge { padding: 2px 8px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; font-family: 'JetBrains Mono', monospace; }
     .badge.easy    { background: #14401e; color: #86efac; }
@@ -144,7 +144,7 @@ layout: none
     .badge.windows { background: #003a40; color: #a5f3fc; }
     .badge.htb     { background: #0f3320; color: #bbf7d0; }
     .badge.thm     { background: #3f1010; color: #fecaca; }
-    .no-results { text-align: center; padding: 40px 14px; color: var(--text-muted); font-size: 0.88rem; display: none; }
+    .no-results { text-align: center; padding: 40px 14px; color: #aaa; font-size: 0.88rem; display: none; }
     @media (max-width: 768px) { .sidebar { display: none; } .main { margin-left: 0; } .topbar, .content { padding-left: 20px; padding-right: 20px; } }
   </style>
 </head>
@@ -179,7 +179,6 @@ layout: none
   </nav>
 
   <main class="main">
-    <!-- STICKY TOPBAR WITH SEARCH -->
     <div class="topbar">
       <span class="topbar-title">~/writeups</span>
       <div class="topbar-search">
@@ -191,7 +190,6 @@ layout: none
     <div class="content">
       <div class="section-title">Writeups</div>
 
-      <!-- PLATFORM BUTTONS -->
       <div class="platform-btns">
         <button class="platform-btn htb-btn" id="htb-toggle" onclick="togglePanel('htb')">
           🐧 HackTheBox <span class="chevron">▼</span>
@@ -201,7 +199,6 @@ layout: none
         </button>
       </div>
 
-      <!-- HTB PANEL -->
       <div class="filter-panel" id="panel-htb">
         <div class="panel-row">
           <span class="panel-label">Difficulty</span>
@@ -219,7 +216,6 @@ layout: none
         </div>
       </div>
 
-      <!-- THM PANEL -->
       <div class="filter-panel" id="panel-thm">
         <div class="panel-row">
           <span class="panel-label">Difficulty</span>
@@ -237,13 +233,11 @@ layout: none
         </div>
       </div>
 
-      <!-- STATUS -->
       <div class="filter-status">
         <span class="count">Showing <span id="showing-count">0</span> of <span id="total-count">0</span> writeups</span>
         <button class="clear-btn" onclick="clearFilters()">✕ Clear all filters</button>
       </div>
 
-      <!-- TABLE -->
       <table class="writeups-table">
         <thead><tr><th>Machine / Challenge</th><th>Platform</th><th>OS</th><th>Difficulty</th></tr></thead>
         <tbody id="writeups-body">
@@ -261,7 +255,6 @@ layout: none
 
   <script>
     const state = { platform: 'all', htb: { difficulty: 'all', os: 'all' }, thm: { difficulty: 'all', os: 'all' } };
-
     function togglePanel(platform) {
       const isOpen = document.getElementById('panel-' + platform).classList.contains('open');
       ['htb','thm'].forEach(p => {
@@ -272,40 +265,31 @@ layout: none
         document.getElementById('panel-' + platform).classList.add('open');
         document.getElementById(platform + '-toggle').classList.add('open');
         state.platform = platform;
-      } else {
-        state.platform = 'all';
-      }
+      } else { state.platform = 'all'; }
       applyFilters();
     }
-
     document.querySelectorAll('.filter-btn[data-group]').forEach(btn => {
       btn.addEventListener('click', () => {
-        const group = btn.dataset.group;
-        const filter = btn.dataset.filter;
+        const group = btn.dataset.group, filter = btn.dataset.filter;
         state[group][filter] = btn.dataset.value;
         document.querySelectorAll(`.filter-btn[data-group="${group}"][data-filter="${filter}"]`).forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         applyFilters();
       });
     });
-
     function applyFilters() {
       const search = document.getElementById('search-input').value.toLowerCase();
       const rows = document.querySelectorAll('.writeup-row');
       let visible = 0;
       rows.forEach(row => {
-        const rPlat = row.dataset.platform;
-        const rDiff = row.dataset.difficulty;
-        const rOs   = row.dataset.os;
-        const rName = row.querySelector('a').textContent.toLowerCase();
         let show = true;
-        if (search && !rName.includes(search)) show = false;
+        if (search && !row.querySelector('a').textContent.toLowerCase().includes(search)) show = false;
         if (state.platform !== 'all') {
-          if (rPlat !== state.platform) { show = false; }
+          if (row.dataset.platform !== state.platform) { show = false; }
           else {
             const s = state[state.platform];
-            if (s.difficulty !== 'all' && s.difficulty !== rDiff) show = false;
-            if (s.os !== 'all' && s.os !== rOs) show = false;
+            if (s.difficulty !== 'all' && s.difficulty !== row.dataset.difficulty) show = false;
+            if (s.os !== 'all' && s.os !== row.dataset.os) show = false;
           }
         }
         row.classList.toggle('hidden', !show);
@@ -314,7 +298,6 @@ layout: none
       document.getElementById('showing-count').textContent = visible;
       document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
     }
-
     function clearFilters() {
       state.platform = 'all';
       state.htb = { difficulty: 'all', os: 'all' };
@@ -328,7 +311,6 @@ layout: none
       document.getElementById('search-input').value = '';
       applyFilters();
     }
-
     function updateStats() {
       const rows = [...document.querySelectorAll('.writeup-row')];
       document.getElementById('total-count').textContent = rows.length;
