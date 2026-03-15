@@ -14,15 +14,17 @@ layout: none
       --sidebar-bg: #0f0f0f; --sidebar-border: #1e1e1e; --body-bg: #0d0d0d;
       --card-bg: #141414; --card-border: #1f1f1f;
       --accent: #e05252; --accent-bright: #ff6b6b;
-      --accent-glow: rgba(224,82,82,0.1); --accent-dim: #2a1515;
-      --text: #d0d0d0; --text-muted: #5a5a5a; --text-bright: #f0f0f0;
+      --accent-glow: rgba(224,82,82,0.1);
+      --text: #e8e8e8; --text-muted: #888; --text-bright: #ffffff;
       --section-label: #3a3a3a; --nav-hover: rgba(224,82,82,0.07); --divider: #1a1a1a;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: var(--body-bg); color: var(--text); font-family: 'Inter', sans-serif; display: flex; min-height: 100vh; }
+
+    /* SIDEBAR */
     .sidebar { width: 260px; min-height: 100vh; background: var(--sidebar-bg); border-right: 1px solid var(--sidebar-border); position: fixed; top: 0; left: 0; overflow-y: auto; display: flex; flex-direction: column; }
     .logo { padding: 22px 20px 18px; border-bottom: 1px solid var(--divider); }
-    .logo .name { font-size: 1.1rem; font-weight: 700; color: #f0f0f0; display: flex; align-items: center; gap: 8px; letter-spacing: -0.3px; }
+    .logo .name { font-size: 1.1rem; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; letter-spacing: -0.3px; }
     .logo .dot { color: var(--accent); }
     .logo .tagline { font-size: 0.7rem; color: var(--text-muted); margin-top: 5px; }
     .search-wrap { padding: 12px 14px; border-bottom: 1px solid var(--divider); }
@@ -31,37 +33,39 @@ layout: none
     .search-wrap input::placeholder { color: #3a3a3a; }
     .nav-body { padding: 6px 0 24px; flex: 1; }
     .nav-section { padding: 14px 18px 4px; font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.3px; color: var(--section-label); }
-    .sidebar a { display: flex; align-items: center; gap: 8px; padding: 6px 18px; color: #606060; text-decoration: none; font-size: 0.845rem; font-weight: 500; transition: all 0.13s; border-left: 2px solid transparent; }
+    .sidebar a { display: flex; align-items: center; gap: 8px; padding: 6px 18px; color: #888; text-decoration: none; font-size: 0.845rem; font-weight: 500; transition: all 0.13s; border-left: 2px solid transparent; }
     .sidebar a:hover { color: var(--text-bright); background: var(--nav-hover); border-left-color: #3a1515; }
     .sidebar a.active { color: var(--accent-bright); background: var(--accent-glow); border-left-color: var(--accent); }
     .sidebar-footer { padding: 14px 18px; border-top: 1px solid var(--divider); font-size: 0.68rem; color: #2a2a2a; font-family: 'JetBrains Mono', monospace; }
     .linkedin-icon { width: 14px; height: 14px; display: inline-block; vertical-align: middle; }
 
-    .main { margin-left: 260px; padding: 44px 52px; width: 100%; }
-    .breadcrumb { font-size: 0.73rem; color: #3a3a3a; margin-bottom: 26px; font-family: 'JetBrains Mono', monospace; }
-    .page-header { margin-bottom: 28px; }
-    .page-header h1 { font-size: 1.9rem; font-weight: 700; color: var(--text-bright); letter-spacing: -0.5px; padding-bottom: 14px; margin-bottom: 10px; border-bottom: 1px solid var(--divider); }
-    .page-header h1 .accent { color: var(--accent); }
-    .page-header p { color: var(--text-muted); font-size: 0.88rem; }
+    /* MAIN */
+    .main { margin-left: 260px; padding: 0; width: 100%; display: flex; flex-direction: column; }
 
-    /* TOP SEARCH */
-    .top-search { position: relative; margin-bottom: 28px; }
-    .top-search input {
-      width: 100%; padding: 10px 16px 10px 40px;
-      background: #111; border: 1px solid #2a2a2a; border-radius: 8px;
-      color: var(--text-bright); font-size: 0.9rem; font-family: inherit; outline: none;
+    /* STICKY TOP BAR with search */
+    .topbar {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(13,13,13,0.92); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--divider);
+      padding: 14px 48px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .topbar-title { font-size: 0.78rem; font-weight: 700; color: var(--accent); font-family: 'JetBrains Mono', monospace; white-space: nowrap; letter-spacing: 0.5px; }
+    .topbar-search { position: relative; flex: 1; max-width: 480px; }
+    .topbar-search input {
+      width: 100%; padding: 8px 14px 8px 36px;
+      background: #141414; border: 1px solid #2a2a2a; border-radius: 7px;
+      color: var(--text-bright); font-size: 0.875rem; font-family: inherit; outline: none;
       transition: border-color 0.15s;
     }
-    .top-search input:focus { border-color: #555; }
-    .top-search input::placeholder { color: #3a3a3a; }
-    .top-search .search-icon { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: #3a3a3a; font-size: 0.9rem; pointer-events: none; }
+    .topbar-search input:focus { border-color: #555; }
+    .topbar-search input::placeholder { color: #555; }
+    .topbar-search .sicon { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); color: #555; font-size: 0.8rem; pointer-events: none; }
 
-    .stats { display: flex; gap: 16px; margin-bottom: 32px; flex-wrap: wrap; }
-    .stat { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 7px; padding: 14px 18px; min-width: 110px; position: relative; overflow: hidden; }
-    .stat::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--accent); opacity: 0.6; }
-    .stat .val { font-size: 1.55rem; font-weight: 700; color: var(--text-bright); font-family: 'JetBrains Mono', monospace; }
-    .stat .lbl { font-size: 0.68rem; color: var(--text-muted); margin-top: 3px; text-transform: uppercase; letter-spacing: 0.5px; }
-    .section-title { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--accent); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+    /* CONTENT */
+    .content { padding: 36px 48px; }
+
+    .section-title { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--accent); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
     .section-title::after { content: ''; flex: 1; height: 1px; background: var(--divider); }
 
     /* PLATFORM BUTTONS */
@@ -73,16 +77,12 @@ layout: none
       display: flex; align-items: center; justify-content: center; gap: 10px;
       border: 2px solid transparent;
     }
-    .platform-btn.htb-btn {
-      background: #0f3320; border-color: #4ade80; color: #bbf7d0;
-    }
+    .platform-btn.htb-btn { background: #0f3320; border-color: #4ade80; color: #bbf7d0; }
     .platform-btn.htb-btn:hover, .platform-btn.htb-btn.open {
       background: #15803d; border-color: #86efac; color: #fff;
       box-shadow: 0 0 18px rgba(74,222,128,0.35); transform: translateY(-2px);
     }
-    .platform-btn.thm-btn {
-      background: #3f1010; border-color: #f87171; color: #fecaca;
-    }
+    .platform-btn.thm-btn { background: #3f1010; border-color: #f87171; color: #fecaca; }
     .platform-btn.thm-btn:hover, .platform-btn.thm-btn.open {
       background: #b91c1c; border-color: #fca5a5; color: #fff;
       box-shadow: 0 0 18px rgba(248,113,113,0.35); transform: translateY(-2px);
@@ -100,30 +100,23 @@ layout: none
     @keyframes slideDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
     .panel-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
     .panel-row:last-child { margin-bottom: 0; }
-    .panel-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--section-label); min-width: 80px; font-family: 'JetBrains Mono', monospace; }
+    .panel-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); min-width: 80px; font-family: 'JetBrains Mono', monospace; }
 
     .filter-btn { padding: 4px 13px; border-radius: 5px; font-size: 0.76rem; font-weight: 700; cursor: pointer; transition: all 0.15s; font-family: 'Inter', sans-serif; border: 2px solid transparent; }
     .filter-btn:hover { transform: translateY(-1px); filter: brightness(1.15); }
     .filter-btn.active { color: #fff !important; transform: translateY(-1px); }
-    /* All */
     .filter-btn.f-all                        { background: #1e3a5f; border-color: #3b82f6; color: #93c5fd; }
     .filter-btn.f-all.active                 { background: #2563eb; border-color: #60a5fa; box-shadow: 0 0 10px rgba(59,130,246,0.45); }
-    /* Easy */
     .filter-btn[data-value="easy"]            { background: #14401e; border-color: #22c55e; color: #86efac; }
     .filter-btn[data-value="easy"].active     { background: #16a34a; border-color: #4ade80; box-shadow: 0 0 10px rgba(34,197,94,0.45); }
-    /* Medium */
     .filter-btn[data-value="medium"]          { background: #431c00; border-color: #f97316; color: #fdba74; }
     .filter-btn[data-value="medium"].active   { background: #ea580c; border-color: #fb923c; box-shadow: 0 0 10px rgba(249,115,22,0.45); }
-    /* Hard */
     .filter-btn[data-value="hard"]            { background: #3f0f0f; border-color: #ef4444; color: #fca5a5; }
     .filter-btn[data-value="hard"].active     { background: #dc2626; border-color: #f87171; box-shadow: 0 0 10px rgba(239,68,68,0.45); }
-    /* Insane */
     .filter-btn[data-value="insane"]          { background: #2e1050; border-color: #a855f7; color: #d8b4fe; }
     .filter-btn[data-value="insane"].active   { background: #9333ea; border-color: #c084fc; box-shadow: 0 0 10px rgba(168,85,247,0.45); }
-    /* Linux */
     .filter-btn[data-value="linux"]           { background: #3a2e00; border-color: #eab308; color: #fef08a; }
     .filter-btn[data-value="linux"].active    { background: #ca8a04; border-color: #facc15; box-shadow: 0 0 10px rgba(234,179,8,0.45); }
-    /* Windows */
     .filter-btn[data-value="windows"]         { background: #003a40; border-color: #06b6d4; color: #a5f3fc; }
     .filter-btn[data-value="windows"].active  { background: #0891b2; border-color: #67e8f9; box-shadow: 0 0 10px rgba(6,182,212,0.45); }
 
@@ -131,16 +124,16 @@ layout: none
     .filter-status { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding: 9px 14px; background: #111; border: 1px solid var(--divider); border-radius: 6px; }
     .filter-status .count { font-size: 0.78rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; }
     .filter-status .count span { color: var(--text-bright); font-weight: 700; }
-    .clear-btn { padding: 4px 12px; border-radius: 4px; font-size: 0.72rem; font-weight: 600; background: transparent; border: 1px solid #2a2a2a; color: #4a4a4a; cursor: pointer; transition: all 0.13s; font-family: 'Inter', sans-serif; }
+    .clear-btn { padding: 4px 12px; border-radius: 4px; font-size: 0.72rem; font-weight: 600; background: transparent; border: 1px solid #333; color: #666; cursor: pointer; transition: all 0.13s; font-family: 'Inter', sans-serif; }
     .clear-btn:hover { border-color: var(--accent); color: var(--accent); }
 
     /* TABLE */
-    .writeups-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
-    .writeups-table th { text-align: left; padding: 9px 14px; color: #3a3a3a; font-weight: 600; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.6px; border-bottom: 1px solid var(--divider); }
-    .writeups-table td { padding: 10px 14px; border-bottom: 1px solid var(--divider); color: var(--text); }
+    .writeups-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+    .writeups-table th { text-align: left; padding: 9px 14px; color: #666; font-weight: 600; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.6px; border-bottom: 1px solid var(--divider); }
+    .writeups-table td { padding: 11px 14px; border-bottom: 1px solid var(--divider); color: var(--text); }
     .writeups-table tr.writeup-row:hover td { background: rgba(224,82,82,0.04); }
     .writeups-table tr.writeup-row.hidden { display: none; }
-    .writeups-table a { color: var(--text-bright); text-decoration: none; font-weight: 500; }
+    .writeups-table a { color: var(--text-bright); text-decoration: none; font-weight: 600; }
     .writeups-table a:hover { color: var(--accent-bright); }
     .badge { padding: 2px 8px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; font-family: 'JetBrains Mono', monospace; }
     .badge.easy    { background: #14401e; color: #86efac; }
@@ -152,7 +145,7 @@ layout: none
     .badge.htb     { background: #0f3320; color: #bbf7d0; }
     .badge.thm     { background: #3f1010; color: #fecaca; }
     .no-results { text-align: center; padding: 40px 14px; color: var(--text-muted); font-size: 0.88rem; display: none; }
-    @media (max-width: 768px) { .sidebar { display: none; } .main { margin-left: 0; padding: 24px 16px; } }
+    @media (max-width: 768px) { .sidebar { display: none; } .main { margin-left: 0; } .topbar, .content { padding-left: 20px; padding-right: 20px; } }
   </style>
 </head>
 <body>
@@ -186,131 +179,111 @@ layout: none
   </nav>
 
   <main class="main">
-    <div class="breadcrumb">~/pwntagonist</div>
-    <div class="page-header">
-      <h1>Welcome to <span class="accent">Pwntagonist</span> 👾</h1>
-      <p>Cybersecurity notes, CTF writeups, and pentesting references.</p>
-    </div>
-
-    <!-- TOP SEARCH -->
-    <div class="top-search">
-      <span class="search-icon">🔍</span>
-      <input type="text" id="search-input" placeholder="Search writeups by name..." oninput="applyFilters()">
-    </div>
-
-    <div class="stats">
-      <div class="stat"><div class="val" id="stat-total">0</div><div class="lbl">Total Writeups</div></div>
-      <div class="stat"><div class="val" id="stat-htb">0</div><div class="lbl">HTB Machines</div></div>
-      <div class="stat"><div class="val" id="stat-thm">0</div><div class="lbl">THM Rooms</div></div>
-      <div class="stat"><div class="val">1</div><div class="lbl">Cheatsheets</div></div>
-    </div>
-
-    <div class="section-title">Writeups</div>
-
-    <!-- PLATFORM BUTTONS -->
-    <div class="platform-btns">
-      <button class="platform-btn htb-btn" id="htb-toggle" onclick="togglePanel('htb')">
-        🐧 HackTheBox <span class="chevron">▼</span>
-      </button>
-      <button class="platform-btn thm-btn" id="thm-toggle" onclick="togglePanel('thm')">
-        🚨 TryHackMe <span class="chevron">▼</span>
-      </button>
-    </div>
-
-    <!-- HTB PANEL -->
-    <div class="filter-panel" id="panel-htb">
-      <div class="panel-row">
-        <span class="panel-label">Difficulty</span>
-        <button class="filter-btn f-all active" data-group="htb" data-filter="difficulty" data-value="all">All</button>
-        <button class="filter-btn" data-group="htb" data-filter="difficulty" data-value="easy">Easy</button>
-        <button class="filter-btn" data-group="htb" data-filter="difficulty" data-value="medium">Medium</button>
-        <button class="filter-btn" data-group="htb" data-filter="difficulty" data-value="hard">Hard</button>
-        <button class="filter-btn" data-group="htb" data-filter="difficulty" data-value="insane">Insane</button>
-      </div>
-      <div class="panel-row">
-        <span class="panel-label">OS</span>
-        <button class="filter-btn f-all active" data-group="htb" data-filter="os" data-value="all">All</button>
-        <button class="filter-btn" data-group="htb" data-filter="os" data-value="linux">Linux</button>
-        <button class="filter-btn" data-group="htb" data-filter="os" data-value="windows">Windows</button>
+    <!-- STICKY TOPBAR WITH SEARCH -->
+    <div class="topbar">
+      <span class="topbar-title">~/writeups</span>
+      <div class="topbar-search">
+        <span class="sicon">🔍</span>
+        <input type="text" id="search-input" placeholder="Search writeups..." oninput="applyFilters()">
       </div>
     </div>
 
-    <!-- THM PANEL -->
-    <div class="filter-panel" id="panel-thm">
-      <div class="panel-row">
-        <span class="panel-label">Difficulty</span>
-        <button class="filter-btn f-all active" data-group="thm" data-filter="difficulty" data-value="all">All</button>
-        <button class="filter-btn" data-group="thm" data-filter="difficulty" data-value="easy">Easy</button>
-        <button class="filter-btn" data-group="thm" data-filter="difficulty" data-value="medium">Medium</button>
-        <button class="filter-btn" data-group="thm" data-filter="difficulty" data-value="hard">Hard</button>
-        <button class="filter-btn" data-group="thm" data-filter="difficulty" data-value="insane">Insane</button>
-      </div>
-      <div class="panel-row">
-        <span class="panel-label">OS</span>
-        <button class="filter-btn f-all active" data-group="thm" data-filter="os" data-value="all">All</button>
-        <button class="filter-btn" data-group="thm" data-filter="os" data-value="linux">Linux</button>
-        <button class="filter-btn" data-group="thm" data-filter="os" data-value="windows">Windows</button>
-      </div>
-    </div>
+    <div class="content">
+      <div class="section-title">Writeups</div>
 
-    <!-- STATUS -->
-    <div class="filter-status">
-      <span class="count">Showing <span id="showing-count">0</span> of <span id="total-count">0</span> writeups</span>
-      <button class="clear-btn" onclick="clearFilters()">✕ Clear all filters</button>
-    </div>
+      <!-- PLATFORM BUTTONS -->
+      <div class="platform-btns">
+        <button class="platform-btn htb-btn" id="htb-toggle" onclick="togglePanel('htb')">
+          🐧 HackTheBox <span class="chevron">▼</span>
+        </button>
+        <button class="platform-btn thm-btn" id="thm-toggle" onclick="togglePanel('thm')">
+          🚨 TryHackMe <span class="chevron">▼</span>
+        </button>
+      </div>
 
-    <!-- TABLE -->
-    <table class="writeups-table">
-      <thead><tr><th>Machine / Challenge</th><th>Platform</th><th>OS</th><th>Difficulty</th></tr></thead>
-      <tbody id="writeups-body">
-        <tr class="writeup-row" data-difficulty="easy" data-platform="htb" data-os="linux">
-          <td><a href="/htb/linux/example-machine">Example Machine</a></td>
-          <td><span class="badge htb">HTB</span></td>
-          <td><span class="badge linux">Linux</span></td>
-          <td><span class="badge easy">Easy</span></td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="no-results" id="no-results">🔍 No writeups match the selected filters.</div>
+      <!-- HTB PANEL -->
+      <div class="filter-panel" id="panel-htb">
+        <div class="panel-row">
+          <span class="panel-label">Difficulty</span>
+          <button class="filter-btn f-all active" data-group="htb" data-filter="difficulty" data-value="all">All</button>
+          <button class="filter-btn" data-group="htb" data-filter="difficulty" data-value="easy">Easy</button>
+          <button class="filter-btn" data-group="htb" data-filter="difficulty" data-value="medium">Medium</button>
+          <button class="filter-btn" data-group="htb" data-filter="difficulty" data-value="hard">Hard</button>
+          <button class="filter-btn" data-group="htb" data-filter="difficulty" data-value="insane">Insane</button>
+        </div>
+        <div class="panel-row">
+          <span class="panel-label">OS</span>
+          <button class="filter-btn f-all active" data-group="htb" data-filter="os" data-value="all">All</button>
+          <button class="filter-btn" data-group="htb" data-filter="os" data-value="linux">Linux</button>
+          <button class="filter-btn" data-group="htb" data-filter="os" data-value="windows">Windows</button>
+        </div>
+      </div>
+
+      <!-- THM PANEL -->
+      <div class="filter-panel" id="panel-thm">
+        <div class="panel-row">
+          <span class="panel-label">Difficulty</span>
+          <button class="filter-btn f-all active" data-group="thm" data-filter="difficulty" data-value="all">All</button>
+          <button class="filter-btn" data-group="thm" data-filter="difficulty" data-value="easy">Easy</button>
+          <button class="filter-btn" data-group="thm" data-filter="difficulty" data-value="medium">Medium</button>
+          <button class="filter-btn" data-group="thm" data-filter="difficulty" data-value="hard">Hard</button>
+          <button class="filter-btn" data-group="thm" data-filter="difficulty" data-value="insane">Insane</button>
+        </div>
+        <div class="panel-row">
+          <span class="panel-label">OS</span>
+          <button class="filter-btn f-all active" data-group="thm" data-filter="os" data-value="all">All</button>
+          <button class="filter-btn" data-group="thm" data-filter="os" data-value="linux">Linux</button>
+          <button class="filter-btn" data-group="thm" data-filter="os" data-value="windows">Windows</button>
+        </div>
+      </div>
+
+      <!-- STATUS -->
+      <div class="filter-status">
+        <span class="count">Showing <span id="showing-count">0</span> of <span id="total-count">0</span> writeups</span>
+        <button class="clear-btn" onclick="clearFilters()">✕ Clear all filters</button>
+      </div>
+
+      <!-- TABLE -->
+      <table class="writeups-table">
+        <thead><tr><th>Machine / Challenge</th><th>Platform</th><th>OS</th><th>Difficulty</th></tr></thead>
+        <tbody id="writeups-body">
+          <tr class="writeup-row" data-difficulty="easy" data-platform="htb" data-os="linux">
+            <td><a href="/htb/linux/example-machine">Example Machine</a></td>
+            <td><span class="badge htb">HTB</span></td>
+            <td><span class="badge linux">Linux</span></td>
+            <td><span class="badge easy">Easy</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="no-results" id="no-results">🔍 No writeups match the selected filters.</div>
+    </div>
   </main>
 
   <script>
-    // State
-    const state = {
-      platform: 'all',       // 'all' | 'htb' | 'thm'
-      htb: { difficulty: 'all', os: 'all' },
-      thm: { difficulty: 'all', os: 'all' }
-    };
+    const state = { platform: 'all', htb: { difficulty: 'all', os: 'all' }, thm: { difficulty: 'all', os: 'all' } };
 
     function togglePanel(platform) {
       const isOpen = document.getElementById('panel-' + platform).classList.contains('open');
-      // Close both
       ['htb','thm'].forEach(p => {
         document.getElementById('panel-' + p).classList.remove('open');
         document.getElementById(p + '-toggle').classList.remove('open');
       });
       if (!isOpen) {
-        // Open clicked one and set platform filter
         document.getElementById('panel-' + platform).classList.add('open');
         document.getElementById(platform + '-toggle').classList.add('open');
         state.platform = platform;
       } else {
-        // Was open, now closed = show all
         state.platform = 'all';
       }
       applyFilters();
     }
 
-    // Filter btn clicks inside panels
     document.querySelectorAll('.filter-btn[data-group]').forEach(btn => {
       btn.addEventListener('click', () => {
         const group = btn.dataset.group;
         const filter = btn.dataset.filter;
-        const value = btn.dataset.value;
-        state[group][filter] = value;
-        // Update active in this group+filter
-        document.querySelectorAll(`.filter-btn[data-group="${group}"][data-filter="${filter}"]`)
-          .forEach(b => b.classList.remove('active'));
+        state[group][filter] = btn.dataset.value;
+        document.querySelectorAll(`.filter-btn[data-group="${group}"][data-filter="${filter}"]`).forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         applyFilters();
       });
@@ -326,9 +299,7 @@ layout: none
         const rOs   = row.dataset.os;
         const rName = row.querySelector('a').textContent.toLowerCase();
         let show = true;
-        // Search
         if (search && !rName.includes(search)) show = false;
-        // Platform
         if (state.platform !== 'all') {
           if (rPlat !== state.platform) { show = false; }
           else {
@@ -360,9 +331,6 @@ layout: none
 
     function updateStats() {
       const rows = [...document.querySelectorAll('.writeup-row')];
-      document.getElementById('stat-total').textContent = rows.length;
-      document.getElementById('stat-htb').textContent = rows.filter(r => r.dataset.platform === 'htb').length;
-      document.getElementById('stat-thm').textContent = rows.filter(r => r.dataset.platform === 'thm').length;
       document.getElementById('total-count').textContent = rows.length;
       document.getElementById('showing-count').textContent = rows.length;
     }
