@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} | Pwntagonist</title>
-  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/logo.svg">
   <link rel="alternate" type="application/rss+xml" title="Pwntagonist RSS Feed" href="/feed.xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -35,7 +35,7 @@
     .logo .name { font-size: 1.1rem; font-weight: 700; color: var(--text-bright); display: flex; align-items: center; gap: 8px; letter-spacing: -0.3px; text-decoration: none; }
     .logo .dot { color: var(--accent); }
     .logo .tagline { font-size: 0.7rem; color: var(--text-muted); margin-top: 5px; }
-    .logo-img { width: 28px; height: 28px; object-fit: contain; }
+    .logo-img { width: 32px; height: 32px; object-fit: contain; border-radius: 6px; }
     .search-wrap { padding: 12px 14px; border-bottom: 1px solid var(--divider); }
     .search-wrap input { width: 100%; background: var(--pre-bg); border: 1px solid var(--code-border); border-radius: 5px; padding: 7px 11px; color: var(--text); font-size: 0.81rem; font-family: inherit; outline: none; }
     .search-wrap input:focus { border-color: var(--accent); }
@@ -115,7 +115,7 @@
 <body>
   <nav class="sidebar">
     <div class="logo">
-      <a href="/" class="name"><img src="/assets/img/logo.png" alt="Pwntagonist" class="logo-img"> Pwn<span class="dot">tagonist</span></a>
+      <a href="/" class="name"><img src="/assets/img/logo.svg" alt="Pwntagonist" class="logo-img"> Pwn<span class="dot">tagonist</span></a>
       <div class="tagline">CTF writeups &amp; pentesting notes</div>
     </div>
     <div class="search-wrap"><input type="text" placeholder="Search..."></div>
