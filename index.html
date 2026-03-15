@@ -117,11 +117,12 @@ layout: none
     .clear-btn:hover { border-color: var(--accent); color: var(--accent); }
     .writeups-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
     .writeups-table th { text-align: left; padding: 9px 14px; color: var(--text-muted); font-weight: 600; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.6px; border-bottom: 1px solid var(--divider); }
-    .writeups-table td { padding: 11px 14px; border-bottom: 1px solid var(--divider); color: var(--text); }
+    .writeups-table td { padding: 11px 14px; border-bottom: 1px solid var(--divider); color: var(--text); vertical-align: middle; }
     .writeups-table tr.writeup-row:hover td { background: rgba(224,82,82,0.04); }
     .writeups-table tr.writeup-row.hidden { display: none; }
-    .writeups-table a { color: var(--text-bright); text-decoration: none; font-weight: 600; }
+    .writeups-table a { color: var(--text-bright); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 10px; }
     .writeups-table a:hover { color: var(--accent-bright); }
+    .machine-thumb { width: 28px; height: 28px; object-fit: contain; border-radius: 5px; flex-shrink: 0; }
     .badge { padding: 2px 8px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; font-family: 'JetBrains Mono', monospace; }
     .badge.easy    { background: #14401e; color: #86efac; }
     .badge.medium  { background: #431c00; color: #fdba74; }
@@ -131,6 +132,8 @@ layout: none
     .badge.windows { background: #003a40; color: #a5f3fc; }
     .badge.htb     { background: #0f3320; color: #bbf7d0; }
     .badge.thm     { background: #3f1010; color: #fecaca; }
+    .tag-pill { display: inline-flex; align-items: center; padding: 1px 7px; border-radius: 20px; font-size: 0.62rem; font-weight: 600; background: var(--card-bg); border: 1px solid #2a2a2a; color: #777; font-family: 'JetBrains Mono', monospace; margin-right: 4px; }
+    .status-coming { font-size: 0.72rem; color: #666; font-family: 'JetBrains Mono', monospace; }
     .no-results { text-align: center; padding: 40px 14px; color: var(--text-muted); font-size: 0.88rem; display: none; }
     .back-to-top { position: fixed; bottom: 28px; right: 28px; width: 42px; height: 42px; border-radius: 10px; background: #1a1a1a; border: 1px solid #333; color: #aaa; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; opacity: 0; pointer-events: none; z-index: 200; text-decoration: none; }
     .back-to-top.visible { opacity: 1; pointer-events: all; }
@@ -276,13 +279,32 @@ layout: none
         <button class="clear-btn" onclick="clearFilters()">✕ Clear all filters</button>
       </div>
       <table class="writeups-table">
-        <thead><tr><th>Machine / Challenge</th><th>Platform</th><th>OS</th><th>Difficulty</th></tr></thead>
+        <thead><tr><th>Machine / Challenge</th><th>Platform</th><th>OS</th><th>Difficulty</th><th>Tags</th><th>Status</th></tr></thead>
         <tbody id="writeups-body">
           <tr class="writeup-row" data-difficulty="easy" data-platform="htb" data-os="linux">
             <td><a href="/htb/linux/example-machine">Example Machine</a></td>
             <td><span class="badge htb">HTB</span></td>
             <td><span class="badge linux">Linux</span></td>
             <td><span class="badge easy">Easy</span></td>
+            <td></td>
+            <td>✅ Rooted</td>
+          </tr>
+          <tr class="writeup-row" data-difficulty="easy" data-platform="htb" data-os="linux">
+            <td>
+              <a href="/htb/linux/cap">
+                <img src="/assets/img/machines/cap.png" alt="Cap" class="machine-thumb" onerror="this.style.display='none'">
+                Cap
+              </a>
+            </td>
+            <td><span class="badge htb">HTB</span></td>
+            <td><span class="badge linux">Linux</span></td>
+            <td><span class="badge easy">Easy</span></td>
+            <td>
+              <span class="tag-pill">web</span>
+              <span class="tag-pill">capabilities</span>
+              <span class="tag-pill">python</span>
+            </td>
+            <td><span class="status-coming">🔒 Coming Soon</span></td>
           </tr>
         </tbody>
       </table>
