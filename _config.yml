@@ -1,15 +1,33 @@
-title: "Pwntagonist"
+title: Pwntagonist
 description: "Cybersecurity journey, CTF writeups & pentesting notes"
-url: ""
-baseurl: ""
-theme: minima
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+baseurl: "/ctf-blog"
+url: "https://h00lig4nn.github.io"
 
-minima:
-  skin: dark
+theme: just-the-docs
 
 author: Pwntagonist
 
-show_excerpts: true
+# Just the Docs config
+color_scheme: dark
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+  tokenizer_separator: /[\s\-/]+/
+  rel_url: true
+  button: false
+
+nav_sort: case_insensitive
+
+aux_links:
+  "GitHub": "https://github.com/H00liG4NN"
+
+aux_links_new_tab: true
+
+footer_content: "Pwntagonist &copy; 2026"
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-github-metadata
