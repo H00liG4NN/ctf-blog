@@ -1,6 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <rect width="100" height="100" rx="18" ry="18" fill="#1a1a1a"/>
-  <text x="12" y="72" font-family="Arial Black, sans-serif" font-weight="900" font-size="72" fill="#e03030">P</text>
-  <text x="48" y="85" font-family="Arial Black, sans-serif" font-weight="900" font-size="32" fill="#e03030">WN</text>
-  <rect x="12" y="55" width="22" height="6" fill="#1a1a1a"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" fill="#0f0f0f"/>
+  <polygon points="29.3,3 70.7,3 97,29.3 97,70.7 70.7,97 29.3,97 3,70.7 3,29.3" fill="#111111"/>
+  <text x="50" y="65"
+    font-family="Arial Black, Impact, sans-serif"
+    font-weight="900"
+    font-size="36"
+    fill="#cc2020"
+    text-anchor="middle"
+    letter-spacing="-1">PWN</text>
 </svg>
