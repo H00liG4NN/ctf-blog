@@ -116,13 +116,13 @@ layout: none
     .clear-btn { padding: 4px 12px; border-radius: 4px; font-size: 0.72rem; font-weight: 600; background: transparent; border: 1px solid var(--card-border); color: var(--text-muted); cursor: pointer; transition: all 0.13s; font-family: 'Inter', sans-serif; }
     .clear-btn:hover { border-color: var(--accent); color: var(--accent); }
     .writeups-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
-    .writeups-table th { text-align: left; padding: 9px 14px; color: var(--text-muted); font-weight: 600; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.6px; border-bottom: 1px solid var(--divider); }
-    .writeups-table td { padding: 11px 14px; border-bottom: 1px solid var(--divider); color: var(--text); vertical-align: middle; }
+    .writeups-table th { text-align: left; padding: 10px 16px; color: var(--text-muted); font-weight: 600; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.6px; border-bottom: 1px solid var(--divider); }
+    .writeups-table td { padding: 14px 16px; border-bottom: 1px solid var(--divider); color: var(--text); vertical-align: middle; }
     .writeups-table tr.writeup-row:hover td { background: rgba(224,82,82,0.04); }
     .writeups-table tr.writeup-row.hidden { display: none; }
-    .writeups-table a { color: var(--text-bright); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+    .writeups-table a { color: var(--text-bright); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 12px; }
     .writeups-table a:hover { color: var(--accent-bright); }
-    .machine-thumb { width: 28px; height: 28px; object-fit: contain; border-radius: 5px; flex-shrink: 0; }
+    .machine-thumb { width: 48px; height: 48px; object-fit: contain; border-radius: 8px; flex-shrink: 0; background: #1a1a1a; padding: 2px; }
     .badge { padding: 2px 8px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; font-family: 'JetBrains Mono', monospace; }
     .badge.easy    { background: #14401e; color: #86efac; }
     .badge.medium  { background: #431c00; color: #fdba74; }
@@ -132,7 +132,7 @@ layout: none
     .badge.windows { background: #003a40; color: #a5f3fc; }
     .badge.htb     { background: #0f3320; color: #bbf7d0; }
     .badge.thm     { background: #3f1010; color: #fecaca; }
-    .tag-pill { display: inline-flex; align-items: center; padding: 1px 7px; border-radius: 20px; font-size: 0.62rem; font-weight: 600; background: var(--card-bg); border: 1px solid #2a2a2a; color: #777; font-family: 'JetBrains Mono', monospace; margin-right: 4px; }
+    .tag-pill { display: inline-flex; align-items: center; padding: 2px 8px; border-radius: 20px; font-size: 0.62rem; font-weight: 600; background: var(--card-bg); border: 1px solid #2a2a2a; color: #777; font-family: 'JetBrains Mono', monospace; margin-right: 4px; white-space: nowrap; }
     .status-coming { font-size: 0.72rem; color: #666; font-family: 'JetBrains Mono', monospace; }
     .no-results { text-align: center; padding: 40px 14px; color: var(--text-muted); font-size: 0.88rem; display: none; }
     .back-to-top { position: fixed; bottom: 28px; right: 28px; width: 42px; height: 42px; border-radius: 10px; background: #1a1a1a; border: 1px solid #333; color: #aaa; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; opacity: 0; pointer-events: none; z-index: 200; text-decoration: none; }
@@ -161,15 +161,7 @@ layout: none
       <a href="/thm/ctfs/">🚩 CTFs</a>
       <div class="nav-section">Tools &amp; Notes</div>
       <a href="/tools/nmap">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="15" height="15" style="flex-shrink:0">
-          <ellipse cx="50" cy="50" rx="46" ry="30" fill="none" stroke="#38bdf8" stroke-width="5"/>
-          <circle cx="50" cy="50" r="13" fill="#38bdf8"/>
-          <circle cx="50" cy="50" r="6" fill="#0f172a"/>
-          <line x1="50" y1="4" x2="50" y2="20" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
-          <line x1="50" y1="80" x2="50" y2="96" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
-          <line x1="4" y1="50" x2="20" y2="50" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
-          <line x1="80" y1="50" x2="96" y2="50" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="15" height="15" style="flex-shrink:0"><ellipse cx="50" cy="50" rx="46" ry="30" fill="none" stroke="#38bdf8" stroke-width="5"/><circle cx="50" cy="50" r="13" fill="#38bdf8"/><circle cx="50" cy="50" r="6" fill="#0f172a"/><line x1="50" y1="4" x2="50" y2="20" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/><line x1="50" y1="80" x2="50" y2="96" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/><line x1="4" y1="50" x2="20" y2="50" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/><line x1="80" y1="50" x2="96" y2="50" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/></svg>
         Nmap
       </a>
       <div class="nav-section">Info</div>
@@ -199,7 +191,6 @@ layout: none
       <div class="sidebar-footer-copy">// pwntagonist &copy; 2026</div>
     </div>
   </nav>
-
   <main class="main">
     <div class="topbar">
       <span class="topbar-title">~/writeups</span>
@@ -292,7 +283,7 @@ layout: none
           <tr class="writeup-row" data-difficulty="easy" data-platform="htb" data-os="linux">
             <td>
               <a href="/htb/linux/cap">
-                <img src="/assets/img/machines/cap.png" alt="Cap" class="machine-thumb" onerror="this.style.display='none'">
+                <img src="/assets/img/machines/cap.jpg" alt="Cap" class="machine-thumb" onerror="this.style.display='none'">
                 Cap
               </a>
             </td>

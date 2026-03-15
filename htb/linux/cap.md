@@ -5,7 +5,7 @@ difficulty: Easy
 os: Linux
 platform: htb
 status: coming-soon
-machine_icon: /assets/img/machines/cap.png
+machine_icon: /assets/img/machines/cap.jpg
 tags:
   - linux
   - easy
@@ -17,7 +17,7 @@ description: A Linux machine involving web enumeration, IDOR vulnerability to gr
 ---
 
 <div style="display:flex;align-items:center;gap:20px;margin-bottom:28px;padding:20px;background:var(--card-bg);border:1px solid var(--divider);border-radius:10px;">
-  <img src="/assets/img/machines/cap.png" alt="Cap" style="width:80px;height:80px;object-fit:contain;border-radius:8px;" onerror="this.style.display='none'">
+  <img src="/assets/img/machines/cap.jpg" alt="Cap" style="width:80px;height:80px;object-fit:contain;border-radius:8px;" onerror="this.style.display='none'">
   <div>
     <div style="font-size:1.1rem;font-weight:700;color:var(--text-bright);margin-bottom:6px;">Cap</div>
     <div style="display:flex;gap:8px;flex-wrap:wrap;">
