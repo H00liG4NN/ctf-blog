@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "just-the-docs"
-gem "jekyll"
+gem "jekyll", "~> 4.3"
+gem "jekyll-remote-theme"
 gem "jekyll-seo-tag"
 gem "jekyll-github-metadata"
