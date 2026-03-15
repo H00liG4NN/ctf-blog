@@ -36,8 +36,47 @@ layout: none
     .sidebar a { display: flex; align-items: center; gap: 8px; padding: 6px 18px; color: #ccc; text-decoration: none; font-size: 0.845rem; font-weight: 500; transition: all 0.13s; border-left: 2px solid transparent; }
     .sidebar a:hover { color: #fff; background: var(--nav-hover); border-left-color: #3a1515; }
     .sidebar a.active { color: var(--accent-bright); background: var(--accent-glow); border-left-color: var(--accent); }
-    .sidebar-footer { padding: 14px 18px; border-top: 1px solid var(--divider); font-size: 0.68rem; color: #666; font-family: 'JetBrains Mono', monospace; }
     .linkedin-icon { width: 14px; height: 14px; display: inline-block; vertical-align: middle; }
+
+    /* SIDEBAR FOOTER */
+    .sidebar-footer {
+      padding: 14px 18px;
+      border-top: 1px solid var(--divider);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .sidebar-footer-copy {
+      font-size: 0.68rem; color: #666;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .profile-icons {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .profile-icon-btn {
+      display: flex; align-items: center; gap: 7px;
+      padding: 6px 11px; border-radius: 6px;
+      text-decoration: none; font-size: 0.75rem; font-weight: 700;
+      transition: all 0.15s; border: 1px solid transparent;
+      font-family: 'Inter', sans-serif;
+    }
+    .profile-icon-btn.htb {
+      background: #0f3320; border-color: #2a6040; color: #86efac;
+    }
+    .profile-icon-btn.htb:hover {
+      background: #15803d; border-color: #4ade80; color: #fff;
+      box-shadow: 0 0 10px rgba(74,222,128,0.25);
+    }
+    .profile-icon-btn.thm {
+      background: #3f1010; border-color: #6a2020; color: #fca5a5;
+    }
+    .profile-icon-btn.thm:hover {
+      background: #b91c1c; border-color: #f87171; color: #fff;
+      box-shadow: 0 0 10px rgba(248,113,113,0.25);
+    }
+    .profile-icon-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
 
     /* MAIN */
     .main { margin-left: 260px; padding: 0; width: 100%; display: flex; flex-direction: column; }
@@ -66,33 +105,6 @@ layout: none
     .content { padding: 36px 48px; }
     .section-title { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--accent); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
     .section-title::after { content: ''; flex: 1; height: 1px; background: var(--divider); }
-
-    /* HTB PROFILE CARD */
-    .htb-card {
-      display: flex; align-items: center; gap: 20px;
-      background: #111; border: 1px solid #1f3a1f;
-      border-radius: 12px; padding: 18px 24px;
-      margin-bottom: 32px;
-      position: relative; overflow: hidden;
-    }
-    .htb-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, #4ade80, #22c55e);
-    }
-    .htb-card-badge img { height: 80px; border-radius: 8px; display: block; }
-    .htb-card-badge a { display: block; transition: transform 0.15s; }
-    .htb-card-badge a:hover { transform: scale(1.03); }
-    .htb-card-info { flex: 1; }
-    .htb-card-info .htb-name { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
-    .htb-card-info .htb-sub { font-size: 0.78rem; color: #86efac; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; }
-    .htb-card-info .htb-link {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 5px 12px; border-radius: 5px;
-      background: #0f3320; border: 1px solid #4ade80; color: #86efac;
-      font-size: 0.75rem; font-weight: 600; text-decoration: none;
-      transition: all 0.13s;
-    }
-    .htb-card-info .htb-link:hover { background: #15803d; color: #fff; }
 
     /* PLATFORM BUTTONS */
     .platform-btns { display: flex; gap: 16px; justify-content: center; margin-bottom: 20px; }
@@ -215,7 +227,30 @@ layout: none
       </a>
       <a href="https://github.com/H00liG4NN" target="_blank">🐙 GitHub ↗</a>
     </div>
-    <div class="sidebar-footer">// pwntagonist © 2026</div>
+
+    <!-- SIDEBAR FOOTER -->
+    <div class="sidebar-footer">
+      <div class="profile-icons">
+        <!-- HTB -->
+        <a class="profile-icon-btn htb" href="https://app.hackthebox.com/users/3113020" target="_blank" title="HackTheBox Profile">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 1.5L2.25 7.125v9.75L12 22.5l9.75-5.625v-9.75L12 1.5z" stroke="#4ade80" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M12 1.5v21M2.25 7.125l9.75 5.625 9.75-5.625" stroke="#4ade80" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+          HTB
+        </a>
+        <!-- TryHackMe -->
+        <a class="profile-icon-btn thm" href="https://tryhackme.com/p/Hooligannn" target="_blank" title="TryHackMe Profile">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="9.5" stroke="#f87171" stroke-width="1.5"/>
+            <path d="M8.5 12a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" stroke="#f87171" stroke-width="1.5"/>
+            <path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2" stroke="#f87171" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          THM
+        </a>
+      </div>
+      <div class="sidebar-footer-copy">// pwntagonist © 2026</div>
+    </div>
   </nav>
 
   <main class="main">
@@ -228,25 +263,6 @@ layout: none
     </div>
 
     <div class="content">
-
-      <!-- HTB PROFILE CARD -->
-      <div class="section-title">Profile</div>
-      <div class="htb-card">
-        <div class="htb-card-badge">
-          <a href="https://app.hackthebox.com/users/3113020" target="_blank">
-            <img src="https://www.hackthebox.eu/badge/image/3113020" alt="HackTheBox Badge" onerror="this.style.display='none'">
-          </a>
-        </div>
-        <div class="htb-card-info">
-          <div class="htb-name">H00liG4NN</div>
-          <div class="htb-sub">// HackTheBox Player</div>
-          <a class="htb-link" href="https://app.hackthebox.com/users/3113020" target="_blank">
-            🐧 View HTB Profile ↗
-          </a>
-        </div>
-      </div>
-
-      <!-- WRITEUPS -->
       <div class="section-title">Writeups</div>
 
       <div class="platform-btns">
@@ -312,21 +328,13 @@ layout: none
     </div>
   </main>
 
-  <!-- BACK TO TOP -->
   <a href="#" class="back-to-top" id="back-to-top" title="Back to top">↑</a>
 
   <script>
-    // Back to top
     const btt = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => {
-      btt.classList.toggle('visible', window.scrollY > 300);
-    });
-    btt.addEventListener('click', e => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    window.addEventListener('scroll', () => { btt.classList.toggle('visible', window.scrollY > 300); });
+    btt.addEventListener('click', e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
-    // Filters
     const state = { platform: 'all', htb: { difficulty: 'all', os: 'all' }, thm: { difficulty: 'all', os: 'all' } };
     function togglePanel(platform) {
       const isOpen = document.getElementById('panel-' + platform).classList.contains('open');
