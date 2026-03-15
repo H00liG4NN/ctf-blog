@@ -7,7 +7,6 @@ remote_theme: just-the-docs/just-the-docs@v0.10.0
 
 color_scheme: dark
 search_enabled: true
-
 nav_sort: case_insensitive
 
 aux_links:
@@ -18,5 +17,6 @@ footer_content: "Pwntagonist &copy; 2026"
 
 plugins:
   - jekyll-remote-theme
+  - jekyll-include-cache
   - jekyll-seo-tag
   - jekyll-github-metadata
