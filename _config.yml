@@ -1,22 +1,9 @@
 title: Pwntagonist
-description: "Cybersecurity notes, CTF writeups & pentesting references"
+description: Cybersecurity notes, CTF writeups & pentesting references
 baseurl: ""
 url: "https://ctf-blog.pages.dev"
 
-remote_theme: just-the-docs/just-the-docs@v0.10.0
-
-color_scheme: dark
-search_enabled: true
-nav_sort: case_insensitive
-
-aux_links:
-  "GitHub ↗": "https://github.com/H00liG4NN"
-aux_links_new_tab: true
-
-footer_content: "Pwntagonist &copy; 2026"
+theme: minima
 
 plugins:
-  - jekyll-remote-theme
-  - jekyll-include-cache
   - jekyll-seo-tag
-  - jekyll-github-metadata

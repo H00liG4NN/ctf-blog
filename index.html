@@ -1,0 +1,80 @@
+---
+layout: none
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pwntagonist</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/just-the-docs@0.10.0/just-the-docs.min.css">
+  <style>
+    :root { --clr-sidebar-bg: #1a1a2e; --clr-body-bg: #0f0f1a; --clr-text: #e0e0e0; --clr-link: #7ec8e3; --clr-accent: #00d4ff; }
+    body { background: var(--clr-body-bg); color: var(--clr-text); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; min-height: 100vh; }
+    .sidebar { width: 260px; min-height: 100vh; background: var(--clr-sidebar-bg); padding: 20px 0; position: fixed; top: 0; left: 0; overflow-y: auto; border-right: 1px solid #2a2a4a; }
+    .sidebar .logo { padding: 20px 24px 30px; font-size: 1.3rem; font-weight: 700; color: var(--clr-accent); border-bottom: 1px solid #2a2a4a; margin-bottom: 16px; }
+    .sidebar .logo span { font-size: 0.75rem; color: #888; display: block; font-weight: 400; margin-top: 4px; }
+    .nav-section { padding: 8px 24px 4px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #666; }
+    .sidebar a { display: block; padding: 7px 24px; color: #aaa; text-decoration: none; font-size: 0.88rem; transition: all 0.15s; }
+    .sidebar a:hover, .sidebar a.active { color: var(--clr-accent); background: rgba(0,212,255,0.07); border-left: 3px solid var(--clr-accent); padding-left: 21px; }
+    .sidebar a.child { padding-left: 40px; font-size: 0.83rem; color: #888; }
+    .sidebar a.child:hover { padding-left: 37px; color: var(--clr-accent); }
+    .main { margin-left: 260px; padding: 48px 60px; max-width: 960px; }
+    h1 { color: #fff; font-size: 2rem; border-bottom: 1px solid #2a2a4a; padding-bottom: 12px; margin-bottom: 8px; }
+    h2 { color: var(--clr-accent); font-size: 1.2rem; margin-top: 36px; }
+    .breadcrumb { color: #555; font-size: 0.8rem; margin-bottom: 24px; }
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-top: 24px; }
+    .card { background: #1a1a2e; border: 1px solid #2a2a4a; border-radius: 8px; padding: 20px; text-decoration: none; color: #ccc; transition: all 0.2s; }
+    .card:hover { border-color: var(--clr-accent); color: #fff; transform: translateY(-2px); }
+    .card .icon { font-size: 1.8rem; margin-bottom: 10px; }
+    .card .title { font-weight: 600; font-size: 0.95rem; color: #fff; }
+    .card .desc { font-size: 0.78rem; color: #666; margin-top: 4px; }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; margin-left: 8px; }
+    .badge.easy { background: #1a4a2e; color: #4caf50; }
+    .badge.medium { background: #4a3a1a; color: #ff9800; }
+    .badge.hard { background: #4a1a1a; color: #f44336; }
+    code { background: #1a1a2e; color: var(--clr-accent); padding: 2px 6px; border-radius: 3px; font-size: 0.85rem; }
+    pre { background: #0d0d1a; border: 1px solid #2a2a4a; border-radius: 6px; padding: 16px; overflow-x: auto; }
+    pre code { background: none; padding: 0; color: #e0e0e0; }
+    .search-bar { padding: 16px 24px; }
+    .search-bar input { width: 100%; background: #0f0f1a; border: 1px solid #2a2a4a; border-radius: 6px; padding: 8px 12px; color: #ccc; font-size: 0.85rem; outline: none; box-sizing: border-box; }
+    .search-bar input:focus { border-color: var(--clr-accent); }
+    @media (max-width: 768px) { .sidebar { display: none; } .main { margin-left: 0; padding: 24px 20px; } }
+  </style>
+</head>
+<body>
+  <nav class="sidebar">
+    <div class="logo">👾 Pwntagonist<span>CTF Writeups & Pentesting Notes</span></div>
+    <div class="search-bar"><input type="text" placeholder="🔍 Search..."></div>
+    <div class="nav-section">Home</div>
+    <a href="/" class="active">🏠 Home</a>
+    <div class="nav-section">HTB Writeups</div>
+    <a href="/htb/linux/">🐧 Linux Machines</a>
+    <a href="/htb/linux/example-machine" class="child">└ Example Machine</a>
+    <a href="/htb/windows/">🪟 Windows Machines</a>
+    <div class="nav-section">CTF Events</div>
+    <a href="/ctf/">🚩 All Events</a>
+    <a href="/ctf/example-ctf" class="child">└ Example CTF 2026</a>
+    <div class="nav-section">Tools & Notes</div>
+    <a href="/tools/nmap">📡 Nmap Cheatsheet</a>
+    <a href="/tools/reverse-shells">🐚 Reverse Shells</a>
+    <div class="nav-section">Info</div>
+    <a href="/about">👤 About</a>
+    <a href="https://github.com/H00liG4NN" target="_blank">🐙 GitHub ↗</a>
+  </nav>
+  <main class="main">
+    <div class="breadcrumb">Home</div>
+    <h1>Welcome to Pwntagonist 👾</h1>
+    <p style="color:#888; margin-bottom: 32px;">Cybersecurity notes, CTF writeups, and pentesting references.</p>
+    <h2>Quick Navigation</h2>
+    <div class="card-grid">
+      <a href="/htb/linux/" class="card"><div class="icon">🐧</div><div class="title">Linux Machines</div><div class="desc">HTB Linux writeups</div></a>
+      <a href="/htb/windows/" class="card"><div class="icon">🪟</div><div class="title">Windows Machines</div><div class="desc">HTB Windows writeups</div></a>
+      <a href="/ctf/" class="card"><div class="icon">🚩</div><div class="title">CTF Events</div><div class="desc">Competition writeups</div></a>
+      <a href="/tools/nmap" class="card"><div class="icon">📡</div><div class="title">Nmap Cheatsheet</div><div class="desc">Quick reference</div></a>
+      <a href="/tools/reverse-shells" class="card"><div class="icon">🐚</div><div class="title">Reverse Shells</div><div class="desc">Shell one-liners</div></a>
+      <a href="/about" class="card"><div class="icon">👤</div><div class="title">About</div><div class="desc">About Pwntagonist</div></a>
+    </div>
+  </main>
+</body>
+</html>
