@@ -1,0 +1,40 @@
+---
+layout: none
+permalink: /404.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 | Pwntagonist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --accent: #e05252; --accent-bright: #ff6b6b; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d0d0d; color: #e8e8e8; font-family: 'Inter', sans-serif; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+    .container { text-align: center; padding: 40px 20px; }
+    .code { font-family: 'JetBrains Mono', monospace; font-size: 6rem; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 16px; text-shadow: 0 0 40px rgba(224,82,82,0.4); }
+    .msg { font-size: 1.1rem; color: #aaa; margin-bottom: 8px; }
+    .sub { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #555; margin-bottom: 36px; }
+    .sub span { color: var(--accent); }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; background: #141414; border: 1px solid #333; border-radius: 8px; color: #ccc; text-decoration: none; font-size: 0.88rem; font-weight: 600; transition: all 0.15s; }
+    .btn:hover { border-color: var(--accent); color: #fff; background: #1a1010; }
+    .ascii { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: #2a2a2a; line-height: 1.4; margin-bottom: 32px; white-space: pre; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="ascii">  _  _    ___  _  _ 
+ | || |  / _ \| || |
+ | || |_| | | | || |_
+ |__   _| | | |__   _|
+    | | | |_| |  | |  
+    |_|  \___/   |_|  </div>
+    <div class="code">404</div>
+    <div class="msg">Page not found</div>
+    <div class="sub">$ cat <span>/this/path</span>: No such file or directory</div>
+    <a class="btn" href="/">🏠 Back to home</a>
+  </div>
+</body>
+</html>
