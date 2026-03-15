@@ -8,41 +8,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --sidebar-bg: #0f0f0f;
-      --sidebar-border: #1e1e1e;
-      --body-bg: #0d0d0d;
-      --card-bg: #141414;
-      --card-border: #1f1f1f;
-      --accent: #e05252;
-      --accent-bright: #ff6b6b;
-      --accent-glow: rgba(224,82,82,0.1);
-      --accent-dim: #2a1515;
-      --text: #d0d0d0;
-      --text-muted: #5a5a5a;
-      --text-bright: #f0f0f0;
-      --section-label: #3a3a3a;
-      --nav-hover: rgba(224,82,82,0.07);
-      --divider: #1a1a1a;
+      --sidebar-bg: #0f0f0f; --sidebar-border: #1e1e1e; --body-bg: #0d0d0d;
+      --card-bg: #141414; --card-border: #1f1f1f;
+      --accent: #e05252; --accent-bright: #ff6b6b;
+      --accent-glow: rgba(224,82,82,0.1); --accent-dim: #2a1515;
+      --text: #d0d0d0; --text-muted: #5a5a5a; --text-bright: #f0f0f0;
+      --section-label: #3a3a3a; --nav-hover: rgba(224,82,82,0.07); --divider: #1a1a1a;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: var(--body-bg); color: var(--text); font-family: 'Inter', sans-serif; display: flex; min-height: 100vh; }
-
-    .sidebar {
-      width: 260px; min-height: 100vh; background: var(--sidebar-bg);
-      border-right: 1px solid var(--sidebar-border);
-      position: fixed; top: 0; left: 0; overflow-y: auto;
-      display: flex; flex-direction: column;
-    }
+    .sidebar { width: 260px; min-height: 100vh; background: var(--sidebar-bg); border-right: 1px solid var(--sidebar-border); position: fixed; top: 0; left: 0; overflow-y: auto; display: flex; flex-direction: column; }
     .logo { padding: 22px 20px 18px; border-bottom: 1px solid var(--divider); }
     .logo .name { font-size: 1.1rem; font-weight: 700; color: #f0f0f0; display: flex; align-items: center; gap: 8px; letter-spacing: -0.3px; text-decoration: none; }
     .logo .dot { color: var(--accent); }
     .logo .tagline { font-size: 0.7rem; color: var(--text-muted); margin-top: 5px; }
-
     .search-wrap { padding: 12px 14px; border-bottom: 1px solid var(--divider); }
     .search-wrap input { width: 100%; background: #0a0a0a; border: 1px solid #1f1f1f; border-radius: 5px; padding: 7px 11px; color: var(--text); font-size: 0.81rem; font-family: inherit; outline: none; }
     .search-wrap input:focus { border-color: var(--accent); }
     .search-wrap input::placeholder { color: #3a3a3a; }
-
     .nav-body { padding: 6px 0 24px; flex: 1; }
     .nav-section { padding: 14px 18px 4px; font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.3px; color: var(--section-label); }
     .sidebar a { display: flex; align-items: center; gap: 8px; padding: 6px 18px; color: #606060; text-decoration: none; font-size: 0.845rem; font-weight: 500; transition: all 0.13s; border-left: 2px solid transparent; }
@@ -51,16 +34,13 @@
     .sidebar a.child { padding-left: 34px; font-size: 0.78rem; color: #3a3a3a; font-weight: 400; }
     .sidebar a.child:hover { color: var(--text-muted); }
     .sidebar-footer { padding: 14px 18px; border-top: 1px solid var(--divider); font-size: 0.68rem; color: #2a2a2a; font-family: 'JetBrains Mono', monospace; }
-
     .main { margin-left: 260px; padding: 44px 52px; width: 100%; max-width: 1060px; }
     .breadcrumb { font-size: 0.73rem; color: #3a3a3a; margin-bottom: 26px; font-family: 'JetBrains Mono', monospace; }
     .breadcrumb a { color: #4a4a4a; text-decoration: none; }
     .breadcrumb a:hover { color: var(--accent); }
-
     .page-header { margin-bottom: 32px; }
     .page-header h1 { font-size: 1.75rem; font-weight: 700; color: var(--text-bright); letter-spacing: -0.4px; padding-bottom: 14px; margin-bottom: 10px; border-bottom: 1px solid var(--divider); }
     .page-header p { color: var(--text-muted); font-size: 0.88rem; }
-
     .content h1 { font-size: 1.6rem; font-weight: 700; color: var(--text-bright); margin: 28px 0 12px; padding-bottom: 10px; border-bottom: 1px solid var(--divider); }
     .content h2 { font-size: 1.2rem; font-weight: 600; color: var(--accent); margin: 24px 0 10px; }
     .content h3 { font-size: 1rem; font-weight: 600; color: var(--text-bright); margin: 18px 0 8px; }
@@ -101,7 +81,12 @@
 
       <div class="nav-section">HTB Writeups</div>
       <a href="/htb/linux/" {% if page.url contains '/htb/linux' %}class="active"{% endif %}>🐧 Linux Machines</a>
-      <a href="/htb/windows/" {% if page.url contains '/htb/windows' %}class="active"{% endif %} style="padding-left:18px">🪟 Windows Machines</a>
+      <a href="/htb/windows/" {% if page.url contains '/htb/windows' %}class="active"{% endif %}>🪟 Windows Machines</a>
+
+      <div class="nav-section">TryHackMe Writeups</div>
+      <a href="/thm/red-team/" {% if page.url contains '/thm/red-team' %}class="active"{% endif %}>🚨 Red Team</a>
+      <a href="/thm/blue-team/" {% if page.url contains '/thm/blue-team' %}class="active"{% endif %}>🛡️ Blue Team</a>
+      <a href="/thm/ctfs/" {% if page.url contains '/thm/ctfs' %}class="active"{% endif %}>🚩 CTFs</a>
 
       <div class="nav-section">Tools &amp; Notes</div>
       <a href="/tools/nmap" {% if page.url contains '/tools/nmap' %}class="active"{% endif %}>📡 Nmap</a>
