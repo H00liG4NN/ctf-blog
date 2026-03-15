@@ -7,74 +7,287 @@ layout: none
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pwntagonist</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/just-the-docs@0.10.0/just-the-docs.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    :root { --clr-sidebar-bg: #1a1a2e; --clr-body-bg: #0f0f1a; --clr-text: #e0e0e0; --clr-link: #7ec8e3; --clr-accent: #00d4ff; }
-    body { background: var(--clr-body-bg); color: var(--clr-text); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; min-height: 100vh; }
-    .sidebar { width: 260px; min-height: 100vh; background: var(--clr-sidebar-bg); padding: 20px 0; position: fixed; top: 0; left: 0; overflow-y: auto; border-right: 1px solid #2a2a4a; }
-    .sidebar .logo { padding: 20px 24px 30px; font-size: 1.3rem; font-weight: 700; color: var(--clr-accent); border-bottom: 1px solid #2a2a4a; margin-bottom: 16px; }
-    .sidebar .logo span { font-size: 0.75rem; color: #888; display: block; font-weight: 400; margin-top: 4px; }
-    .nav-section { padding: 8px 24px 4px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #666; }
-    .sidebar a { display: block; padding: 7px 24px; color: #aaa; text-decoration: none; font-size: 0.88rem; transition: all 0.15s; }
-    .sidebar a:hover, .sidebar a.active { color: var(--clr-accent); background: rgba(0,212,255,0.07); border-left: 3px solid var(--clr-accent); padding-left: 21px; }
-    .sidebar a.child { padding-left: 40px; font-size: 0.83rem; color: #888; }
-    .sidebar a.child:hover { padding-left: 37px; color: var(--clr-accent); }
-    .main { margin-left: 260px; padding: 48px 60px; max-width: 960px; }
-    h1 { color: #fff; font-size: 2rem; border-bottom: 1px solid #2a2a4a; padding-bottom: 12px; margin-bottom: 8px; }
-    h2 { color: var(--clr-accent); font-size: 1.2rem; margin-top: 36px; }
-    .breadcrumb { color: #555; font-size: 0.8rem; margin-bottom: 24px; }
-    .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-top: 24px; }
-    .card { background: #1a1a2e; border: 1px solid #2a2a4a; border-radius: 8px; padding: 20px; text-decoration: none; color: #ccc; transition: all 0.2s; }
-    .card:hover { border-color: var(--clr-accent); color: #fff; transform: translateY(-2px); }
-    .card .icon { font-size: 1.8rem; margin-bottom: 10px; }
-    .card .title { font-weight: 600; font-size: 0.95rem; color: #fff; }
-    .card .desc { font-size: 0.78rem; color: #666; margin-top: 4px; }
-    .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; margin-left: 8px; }
-    .badge.easy { background: #1a4a2e; color: #4caf50; }
-    .badge.medium { background: #4a3a1a; color: #ff9800; }
-    .badge.hard { background: #4a1a1a; color: #f44336; }
-    code { background: #1a1a2e; color: var(--clr-accent); padding: 2px 6px; border-radius: 3px; font-size: 0.85rem; }
-    pre { background: #0d0d1a; border: 1px solid #2a2a4a; border-radius: 6px; padding: 16px; overflow-x: auto; }
-    pre code { background: none; padding: 0; color: #e0e0e0; }
-    .search-bar { padding: 16px 24px; }
-    .search-bar input { width: 100%; background: #0f0f1a; border: 1px solid #2a2a4a; border-radius: 6px; padding: 8px 12px; color: #ccc; font-size: 0.85rem; outline: none; box-sizing: border-box; }
-    .search-bar input:focus { border-color: var(--clr-accent); }
-    @media (max-width: 768px) { .sidebar { display: none; } .main { margin-left: 0; padding: 24px 20px; } }
+    :root {
+      --sidebar-bg: #0d1117;
+      --sidebar-border: #1e2d45;
+      --body-bg: #0a0f1a;
+      --card-bg: #0d1829;
+      --card-border: #1a2d45;
+      --accent: #4d9ef7;
+      --accent-glow: rgba(77,158,247,0.15);
+      --accent-dim: #1e3a5f;
+      --text: #c9d1d9;
+      --text-muted: #5a7a99;
+      --text-bright: #e6edf3;
+      --heading: #58a6ff;
+      --section-label: #3a5a7a;
+      --nav-hover: rgba(77,158,247,0.1);
+      --divider: #161f2e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--body-bg); color: var(--text); font-family: 'Inter', sans-serif; display: flex; min-height: 100vh; }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 268px; min-height: 100vh; background: var(--sidebar-bg);
+      border-right: 1px solid var(--sidebar-border);
+      position: fixed; top: 0; left: 0; overflow-y: auto;
+      display: flex; flex-direction: column;
+    }
+    .logo {
+      padding: 24px 20px 20px;
+      border-bottom: 1px solid var(--divider);
+    }
+    .logo .name {
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--accent); letter-spacing: -0.3px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .logo .tagline {
+      font-size: 0.72rem; color: var(--text-muted);
+      margin-top: 4px; letter-spacing: 0.2px;
+    }
+    .search-wrap { padding: 14px 16px; border-bottom: 1px solid var(--divider); }
+    .search-wrap input {
+      width: 100%; background: #060d16;
+      border: 1px solid var(--card-border);
+      border-radius: 6px; padding: 7px 12px;
+      color: var(--text); font-size: 0.82rem;
+      font-family: inherit; outline: none;
+    }
+    .search-wrap input:focus { border-color: var(--accent); }
+    .search-wrap input::placeholder { color: var(--text-muted); }
+    .nav-body { padding: 8px 0 24px; flex: 1; }
+    .nav-section {
+      padding: 14px 20px 5px;
+      font-size: 0.65rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1.2px;
+      color: var(--section-label);
+    }
+    .sidebar a {
+      display: flex; align-items: center; gap: 8px;
+      padding: 6px 20px; color: var(--text-muted);
+      text-decoration: none; font-size: 0.855rem;
+      font-weight: 500; transition: all 0.15s;
+      border-left: 2px solid transparent;
+    }
+    .sidebar a:hover {
+      color: var(--text-bright); background: var(--nav-hover);
+      border-left-color: var(--accent-dim);
+    }
+    .sidebar a.active {
+      color: var(--accent); background: var(--accent-glow);
+      border-left-color: var(--accent);
+    }
+    .sidebar a.child {
+      padding-left: 36px; font-size: 0.8rem;
+      color: #3a5a7a; font-weight: 400;
+    }
+    .sidebar a.child:hover { color: var(--text); }
+    .sidebar-footer {
+      padding: 16px 20px;
+      border-top: 1px solid var(--divider);
+      font-size: 0.72rem; color: var(--section-label);
+    }
+
+    /* MAIN */
+    .main { margin-left: 268px; padding: 48px 56px; width: 100%; max-width: 1100px; }
+    .breadcrumb { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 28px; }
+    .breadcrumb span { color: var(--section-label); margin: 0 6px; }
+
+    .page-header { margin-bottom: 40px; }
+    .page-header h1 {
+      font-size: 2rem; font-weight: 700;
+      color: var(--text-bright); letter-spacing: -0.5px;
+      border-bottom: 1px solid var(--divider);
+      padding-bottom: 16px; margin-bottom: 12px;
+    }
+    .page-header p { color: var(--text-muted); font-size: 0.92rem; }
+
+    /* STATS BAR */
+    .stats { display: flex; gap: 24px; margin-bottom: 40px; flex-wrap: wrap; }
+    .stat {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 8px; padding: 14px 20px; min-width: 120px;
+    }
+    .stat .val { font-size: 1.6rem; font-weight: 700; color: var(--accent); font-family: 'JetBrains Mono', monospace; }
+    .stat .lbl { font-size: 0.72rem; color: var(--text-muted); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* SECTION HEADING */
+    .section-title {
+      font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px;
+      color: var(--heading); margin-bottom: 16px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-title::after { content: ''; flex: 1; height: 1px; background: var(--divider); }
+
+    /* CARD GRID */
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 14px; margin-bottom: 40px; }
+    .card {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 10px; padding: 22px 20px;
+      text-decoration: none; color: var(--text);
+      transition: all 0.2s; display: block;
+    }
+    .card:hover {
+      border-color: var(--accent); background: #0f1e33;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(77,158,247,0.1);
+    }
+    .card .icon { font-size: 1.7rem; margin-bottom: 12px; }
+    .card .ctitle { font-weight: 600; font-size: 0.92rem; color: var(--text-bright); margin-bottom: 4px; }
+    .card .cdesc { font-size: 0.76rem; color: var(--text-muted); }
+    .card .cbadge {
+      display: inline-block; margin-top: 10px;
+      padding: 2px 8px; border-radius: 4px;
+      font-size: 0.65rem; font-weight: 700;
+      background: var(--accent-dim); color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* RECENT TABLE */
+    .recent-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    .recent-table th {
+      text-align: left; padding: 10px 16px;
+      color: var(--text-muted); font-weight: 600;
+      font-size: 0.72rem; text-transform: uppercase;
+      letter-spacing: 0.5px; border-bottom: 1px solid var(--divider);
+    }
+    .recent-table td { padding: 11px 16px; border-bottom: 1px solid var(--divider); color: var(--text); }
+    .recent-table tr:hover td { background: var(--nav-hover); }
+    .recent-table a { color: var(--accent); text-decoration: none; }
+    .recent-table a:hover { text-decoration: underline; }
+    .badge { padding: 2px 8px; border-radius: 4px; font-size: 0.68rem; font-weight: 700; font-family: 'JetBrains Mono', monospace; }
+    .badge.easy { background: #0d2818; color: #3fb950; }
+    .badge.medium { background: #2d1f00; color: #d29922; }
+    .badge.hard { background: #2d0f0f; color: #f85149; }
+    .badge.linux { background: #0d1f35; color: #58a6ff; }
+    .badge.windows { background: #1a1535; color: #a5a0ff; }
+
+    code { background: #0d1829; color: #79c0ff; padding: 2px 7px; border-radius: 4px; font-size: 0.83rem; font-family: 'JetBrains Mono', monospace; }
+    pre { background: #060d16; border: 1px solid var(--card-border); border-radius: 8px; padding: 18px; overflow-x: auto; margin: 16px 0; }
+    pre code { background: none; padding: 0; color: var(--text); }
+
+    @media (max-width: 768px) { .sidebar { display: none; } .main { margin-left: 0; padding: 24px 16px; } }
   </style>
 </head>
 <body>
   <nav class="sidebar">
-    <div class="logo">👾 Pwntagonist<span>CTF Writeups & Pentesting Notes</span></div>
-    <div class="search-bar"><input type="text" placeholder="🔍 Search..."></div>
-    <div class="nav-section">Home</div>
-    <a href="/" class="active">🏠 Home</a>
-    <div class="nav-section">HTB Writeups</div>
-    <a href="/htb/linux/">🐧 Linux Machines</a>
-    <a href="/htb/linux/example-machine" class="child">└ Example Machine</a>
-    <a href="/htb/windows/">🪟 Windows Machines</a>
-    <div class="nav-section">CTF Events</div>
-    <a href="/ctf/">🚩 All Events</a>
-    <a href="/ctf/example-ctf" class="child">└ Example CTF 2026</a>
-    <div class="nav-section">Tools & Notes</div>
-    <a href="/tools/nmap">📡 Nmap Cheatsheet</a>
-    <a href="/tools/reverse-shells">🐚 Reverse Shells</a>
-    <div class="nav-section">Info</div>
-    <a href="/about">👤 About</a>
-    <a href="https://github.com/H00liG4NN" target="_blank">🐙 GitHub ↗</a>
+    <div class="logo">
+      <div class="name">👾 Pwntagonist</div>
+      <div class="tagline">CTF Writeups &amp; Pentesting Notes</div>
+    </div>
+    <div class="search-wrap">
+      <input type="text" placeholder="🔍 Search writeups...">
+    </div>
+    <div class="nav-body">
+      <div class="nav-section">Home</div>
+      <a href="/" class="active">🏠 Home</a>
+
+      <div class="nav-section">HTB Writeups</div>
+      <a href="/htb/linux/">🐧 Linux Machines</a>
+      <a href="/htb/linux/example-machine" class="child">↳ Example Machine</a>
+      <a href="/htb/windows/">🪟 Windows Machines</a>
+
+      <div class="nav-section">CTF Events</div>
+      <a href="/ctf/">🚩 All Events</a>
+      <a href="/ctf/example-ctf" class="child">↳ Example CTF 2026</a>
+
+      <div class="nav-section">Tools &amp; Notes</div>
+      <a href="/tools/nmap">📡 Nmap Cheatsheet</a>
+      <a href="/tools/reverse-shells">🐚 Reverse Shells</a>
+
+      <div class="nav-section">Info</div>
+      <a href="/about">👤 About</a>
+      <a href="https://github.com/H00liG4NN" target="_blank">🐙 GitHub ↗</a>
+    </div>
+    <div class="sidebar-footer">Pwntagonist © 2026</div>
   </nav>
+
   <main class="main">
     <div class="breadcrumb">Home</div>
-    <h1>Welcome to Pwntagonist 👾</h1>
-    <p style="color:#888; margin-bottom: 32px;">Cybersecurity notes, CTF writeups, and pentesting references.</p>
-    <h2>Quick Navigation</h2>
-    <div class="card-grid">
-      <a href="/htb/linux/" class="card"><div class="icon">🐧</div><div class="title">Linux Machines</div><div class="desc">HTB Linux writeups</div></a>
-      <a href="/htb/windows/" class="card"><div class="icon">🪟</div><div class="title">Windows Machines</div><div class="desc">HTB Windows writeups</div></a>
-      <a href="/ctf/" class="card"><div class="icon">🚩</div><div class="title">CTF Events</div><div class="desc">Competition writeups</div></a>
-      <a href="/tools/nmap" class="card"><div class="icon">📡</div><div class="title">Nmap Cheatsheet</div><div class="desc">Quick reference</div></a>
-      <a href="/tools/reverse-shells" class="card"><div class="icon">🐚</div><div class="title">Reverse Shells</div><div class="desc">Shell one-liners</div></a>
-      <a href="/about" class="card"><div class="icon">👤</div><div class="title">About</div><div class="desc">About Pwntagonist</div></a>
+
+    <div class="page-header">
+      <h1>Welcome to Pwntagonist 👾</h1>
+      <p>Cybersecurity notes, CTF writeups, and pentesting references.</p>
     </div>
+
+    <div class="stats">
+      <div class="stat"><div class="val">0</div><div class="lbl">HTB Machines</div></div>
+      <div class="stat"><div class="val">0</div><div class="lbl">CTF Writeups</div></div>
+      <div class="stat"><div class="val">2</div><div class="lbl">Cheatsheets</div></div>
+      <div class="stat"><div class="val">0</div><div class="lbl">Flags Captured</div></div>
+    </div>
+
+    <div class="section-title">Categories</div>
+    <div class="card-grid">
+      <a href="/htb/linux/" class="card">
+        <div class="icon">🐧</div>
+        <div class="ctitle">Linux Machines</div>
+        <div class="cdesc">HTB Linux walkthroughs</div>
+        <span class="cbadge">HTB</span>
+      </a>
+      <a href="/htb/windows/" class="card">
+        <div class="icon">🪟</div>
+        <div class="ctitle">Windows Machines</div>
+        <div class="cdesc">HTB Windows walkthroughs</div>
+        <span class="cbadge">HTB</span>
+      </a>
+      <a href="/ctf/" class="card">
+        <div class="icon">🚩</div>
+        <div class="ctitle">CTF Events</div>
+        <div class="cdesc">Competition writeups</div>
+        <span class="cbadge">CTF</span>
+      </a>
+      <a href="/tools/nmap" class="card">
+        <div class="icon">📡</div>
+        <div class="ctitle">Nmap Cheatsheet</div>
+        <div class="cdesc">Quick scan reference</div>
+        <span class="cbadge">TOOL</span>
+      </a>
+      <a href="/tools/reverse-shells" class="card">
+        <div class="icon">🐚</div>
+        <div class="ctitle">Reverse Shells</div>
+        <div class="cdesc">Shell one-liners</div>
+        <span class="cbadge">TOOL</span>
+      </a>
+      <a href="/about" class="card">
+        <div class="icon">👤</div>
+        <div class="ctitle">About</div>
+        <div class="cdesc">About Pwntagonist</div>
+        <span class="cbadge">INFO</span>
+      </a>
+    </div>
+
+    <div class="section-title">Recent Writeups</div>
+    <table class="recent-table">
+      <thead>
+        <tr>
+          <th>Machine / Challenge</th>
+          <th>Type</th>
+          <th>OS</th>
+          <th>Difficulty</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="/htb/linux/example-machine">Example Machine</a></td>
+          <td>HTB</td>
+          <td><span class="badge linux">Linux</span></td>
+          <td><span class="badge easy">Easy</span></td>
+        </tr>
+        <tr>
+          <td><a href="/ctf/example-ctf">Example CTF 2026</a></td>
+          <td>CTF</td>
+          <td><span class="badge linux">Web</span></td>
+          <td><span class="badge medium">Medium</span></td>
+        </tr>
+      </tbody>
+    </table>
   </main>
 </body>
 </html>
