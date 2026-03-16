@@ -70,18 +70,15 @@ layout: none
     [data-theme="light"] .topbar{background:rgba(255,255,255,.92);}
     .topbar-title{font-size:.78rem;font-weight:700;color:var(--accent);font-family:'JetBrains Mono',monospace;white-space:nowrap;letter-spacing:.5px;}
     .content{padding:48px;}
-    /* HERO - centered */
     .hero{padding:60px 0 48px;border-bottom:1px solid var(--divider);margin-bottom:48px;display:flex;flex-direction:column;align-items:center;text-align:center;}
     .hero-tag{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent);font-family:'JetBrains Mono',monospace;margin-bottom:16px;}
     .hero-title{font-size:3rem;font-weight:800;color:var(--text-bright);line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;}
     .hero-title span{color:var(--accent);}
     .hero-sub{font-size:1.05rem;color:var(--text-muted);max-width:560px;line-height:1.65;}
-    /* SECTION */
     .section-title{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--accent);margin-bottom:18px;display:flex;align-items:center;gap:10px;}
     .section-title::after{content:'';flex:1;height:1px;background:var(--divider);}
     .section-title a{font-size:.62rem;color:var(--text-muted);text-decoration:none;letter-spacing:.5px;margin-left:4px;white-space:nowrap;}
     .section-title a:hover{color:var(--accent);}
-    /* LATEST POSTS */
     .posts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-bottom:48px;}
     .post-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:10px;padding:20px;transition:all .15s;text-decoration:none;color:inherit;display:block;}
     .post-card:hover{border-color:var(--accent);transform:translateY(-2px);}
@@ -89,7 +86,6 @@ layout: none
     .post-card .post-title{font-size:.95rem;font-weight:600;color:var(--text-bright);margin-bottom:6px;line-height:1.4;}
     .post-card .post-desc{font-size:.78rem;color:var(--text-muted);line-height:1.5;}
     .post-card .post-date{font-size:.68rem;color:#555;margin-top:10px;font-family:'JetBrains Mono',monospace;}
-    /* LATEST WRITEUPS GRID */
     .machines-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px;margin-bottom:48px;}
     .machine-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:14px;padding:22px 14px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;color:inherit;transition:all .18s;position:relative;overflow:hidden;}
     .machine-card:hover{border-color:#333;transform:translateY(-4px);box-shadow:0 8px 32px rgba(0,0,0,.4);}
@@ -125,15 +121,16 @@ layout: none
       <a href="/" class="active">🏠 Home</a>
       <div class="nav-section">Writeups</div>
       <div class="nav-parent" id="nav-writeups" onclick="toggleNav('writeups')">
-        <div class="nav-parent-left">📝 All Writeups</div>
+        <div class="nav-parent-left">📝 Writeups</div>
         <span class="nav-chevron">▼</span>
       </div>
       <div class="nav-children" id="nav-children-writeups">
-        <a href="/writeups/#htb">
+        <a href="/writeups/">📋 All Writeups</a>
+        <a href="/writeups/htb/" class="htb-sub">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="13" height="13"><path d="M12 1.5L2.25 7.125v9.75L12 22.5l9.75-5.625v-9.75L12 1.5z" stroke="#4ade80" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 1.5v21M2.25 7.125l9.75 5.625 9.75-5.625" stroke="#4ade80" stroke-width="1.5" stroke-linejoin="round"/></svg>
           HTB Writeups
         </a>
-        <a href="/writeups/#thm">
+        <a href="/writeups/thm/" class="thm-sub">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="13" height="13"><circle cx="12" cy="12" r="9.5" stroke="#f87171" stroke-width="1.5"/><path d="M8.5 12a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" stroke="#f87171" stroke-width="1.5"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2" stroke="#f87171" stroke-width="1.5" stroke-linecap="round"/></svg>
           THM Writeups
         </a>
@@ -176,15 +173,11 @@ layout: none
       <span class="topbar-title">~/home</span>
     </div>
     <div class="content">
-
-      <!-- HERO: centered, no buttons, no stats -->
       <div class="hero">
         <div class="hero-tag">> whoami</div>
         <h1 class="hero-title">Pwn<span>tagonist</span></h1>
         <p class="hero-sub">Cybersecurity insights, CTF adventures, and thoughts on tech &amp; privacy.</p>
       </div>
-
-      <!-- LATEST POSTS first -->
       <div class="section-title">Latest Posts</div>
       <div class="posts-grid">
         <div class="post-card">
@@ -206,8 +199,6 @@ layout: none
           <div class="post-date">—</div>
         </div>
       </div>
-
-      <!-- LATEST WRITEUPS second -->
       <div class="section-title">Latest Writeups <a href="/writeups/">→ View All</a></div>
       <div class="machines-grid">
         <a href="/htb/linux/cap" class="machine-card">
@@ -241,7 +232,6 @@ layout: none
           <div class="card-badges"><span class="cbadge easy">Easy</span><span class="cbadge htb">HTB</span><span class="cbadge windows">Windows</span></div>
         </a>
       </div>
-
     </div>
   </main>
 
