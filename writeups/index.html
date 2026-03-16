@@ -77,14 +77,60 @@ layout: none
     .content{padding:36px 48px;}
     .section-title{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--accent);margin-bottom:18px;display:flex;align-items:center;gap:10px;}
     .section-title::after{content:'';flex:1;height:1px;background:var(--divider);}
+    /* Platform toggle buttons */
     .platform-btns{display:flex;gap:24px;justify-content:center;margin-bottom:24px;}
-    .platform-btn{flex:1;max-width:380px;padding:24px 32px;border-radius:14px;font-size:1.25rem;font-weight:800;cursor:pointer;transition:all .18s;font-family:'Inter',sans-serif;display:flex;align-items:center;justify-content:center;gap:14px;border:2px solid transparent;letter-spacing:-.3px;text-decoration:none;}
+    .platform-btn{flex:1;max-width:420px;padding:24px 32px;border-radius:14px;font-size:1.25rem;font-weight:800;cursor:pointer;transition:all .18s;font-family:'Inter',sans-serif;display:flex;align-items:center;justify-content:center;gap:14px;border:2px solid transparent;letter-spacing:-.3px;background:none;}
+    .platform-btn .chevron{font-size:.9rem;transition:transform .2s;margin-left:6px;}
+    .platform-btn.open .chevron{transform:rotate(180deg);}
     .platform-btn.htb-btn{background:#0f3320;border-color:#4ade80;color:#bbf7d0;}
-    .platform-btn.htb-btn:hover{background:#15803d;border-color:#86efac;color:#fff;box-shadow:0 0 28px rgba(74,222,128,.4);transform:translateY(-3px);}
+    .platform-btn.htb-btn:hover,.platform-btn.htb-btn.open{background:#15803d;border-color:#86efac;color:#fff;box-shadow:0 0 28px rgba(74,222,128,.4);transform:translateY(-3px);}
     .platform-btn.thm-btn{background:#3f1010;border-color:#f87171;color:#fecaca;}
-    .platform-btn.thm-btn:hover{background:#b91c1c;border-color:#fca5a5;color:#fff;box-shadow:0 0 28px rgba(248,113,113,.4);transform:translateY(-3px);}
-    .platform-btn.all-btn{background:#1e1e2e;border-color:#818cf8;color:#c7d2fe;}
-    .platform-btn.all-btn:hover{background:#3730a3;border-color:#a5b4fc;color:#fff;box-shadow:0 0 28px rgba(129,140,248,.4);transform:translateY(-3px);}
+    .platform-btn.thm-btn:hover,.platform-btn.thm-btn.open{background:#b91c1c;border-color:#fca5a5;color:#fff;box-shadow:0 0 28px rgba(248,113,113,.4);transform:translateY(-3px);}
+    /* Filter panel */
+    .filter-panel{background:var(--card-bg);border:1px solid var(--card-border);border-radius:14px;padding:26px 28px;margin-bottom:18px;display:none;animation:slideDown .18s ease;}
+    .filter-panel.open{display:block;}
+    @keyframes slideDown{from{opacity:0;transform:translateY(-8px);}to{opacity:1;transform:translateY(0);}}
+    .panel-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px;}
+    .panel-row:last-child{margin-bottom:0;}
+    .panel-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);min-width:90px;font-family:'JetBrains Mono',monospace;}
+    .filter-btn{padding:8px 20px;border-radius:8px;font-size:.9rem;font-weight:700;cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif;border:2px solid transparent;background:transparent;}
+    .filter-btn:hover{transform:translateY(-1px);filter:brightness(1.15);}
+    .filter-btn.active{color:#fff!important;transform:translateY(-1px);}
+    .filter-btn.f-all{background:#1e3a5f;border-color:#3b82f6;color:#93c5fd;}
+    .filter-btn.f-all.active{background:#2563eb;border-color:#60a5fa;box-shadow:0 0 10px rgba(59,130,246,.45);}
+    .filter-btn[data-value="easy"]{background:#14401e;border-color:#22c55e;color:#86efac;}
+    .filter-btn[data-value="easy"].active{background:#16a34a;border-color:#4ade80;box-shadow:0 0 10px rgba(34,197,94,.45);}
+    .filter-btn[data-value="medium"]{background:#431c00;border-color:#f97316;color:#fdba74;}
+    .filter-btn[data-value="medium"].active{background:#ea580c;border-color:#fb923c;box-shadow:0 0 10px rgba(249,115,22,.45);}
+    .filter-btn[data-value="hard"]{background:#3f0f0f;border-color:#ef4444;color:#fca5a5;}
+    .filter-btn[data-value="hard"].active{background:#dc2626;border-color:#f87171;box-shadow:0 0 10px rgba(239,68,68,.45);}
+    .filter-btn[data-value="insane"]{background:#2e1050;border-color:#a855f7;color:#d8b4fe;}
+    .filter-btn[data-value="insane"].active{background:#9333ea;border-color:#c084fc;box-shadow:0 0 10px rgba(168,85,247,.45);}
+    .filter-btn[data-value="linux"]{background:#3a2e00;border-color:#eab308;color:#fef08a;}
+    .filter-btn[data-value="linux"].active{background:#ca8a04;border-color:#facc15;box-shadow:0 0 10px rgba(234,179,8,.45);}
+    .filter-btn[data-value="windows"]{background:#003a40;border-color:#06b6d4;color:#a5f3fc;}
+    .filter-btn[data-value="windows"].active{background:#0891b2;border-color:#67e8f9;box-shadow:0 0 10px rgba(6,182,212,.45);}
+    /* Machine cards */
+    .machines-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px;}
+    .machine-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:14px;padding:24px 16px 18px;display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;color:inherit;transition:all .18s;cursor:pointer;position:relative;overflow:hidden;}
+    .machine-card:hover{border-color:#333;transform:translateY(-4px);box-shadow:0 8px 32px rgba(0,0,0,.4);}
+    .machine-card.hidden{display:none;}
+    .machine-card .card-icon{width:140px;height:140px;object-fit:contain;border-radius:50%;margin-bottom:16px;display:block;}
+    .machine-card .card-icon-placeholder{width:140px;height:140px;border-radius:50%;margin-bottom:16px;background:#1a1a1a;display:flex;align-items:center;justify-content:center;font-size:3rem;border:2px solid #2a2a2a;}
+    .machine-card .card-name{font-size:1.05rem;font-weight:700;color:var(--text-bright);margin-bottom:12px;}
+    .card-badges{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:10px;}
+    .cbadge{padding:4px 12px;border-radius:6px;font-size:.72rem;font-weight:700;letter-spacing:.3px;font-family:'JetBrains Mono',monospace;border:1.5px solid transparent;}
+    .cbadge.easy{background:#0d2e14;border-color:#22c55e;color:#86efac;}
+    .cbadge.medium{background:#2e1200;border-color:#f97316;color:#fdba74;}
+    .cbadge.hard{background:#2a0a0a;border-color:#ef4444;color:#fca5a5;}
+    .cbadge.insane{background:#1e0a38;border-color:#a855f7;color:#d8b4fe;}
+    .cbadge.htb{background:#0a2218;border-color:#4ade80;color:#bbf7d0;}
+    .cbadge.thm{background:#2a0a0a;border-color:#f87171;color:#fecaca;}
+    .cbadge.linux{background:#261e00;border-color:#eab308;color:#fef08a;}
+    .cbadge.windows{background:#00252a;border-color:#06b6d4;color:#a5f3fc;}
+    .card-tags{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin-top:4px;}
+    .tag-pill{display:inline-flex;align-items:center;padding:2px 8px;border-radius:20px;font-size:.6rem;font-weight:600;background:rgba(255,255,255,.04);border:1px solid #2a2a2a;color:#666;font-family:'JetBrains Mono',monospace;white-space:nowrap;}
+    .no-results{text-align:center;padding:60px 14px;color:var(--text-muted);font-size:.88rem;display:none;}
     .back-to-top{position:fixed;bottom:28px;right:28px;width:42px;height:42px;border-radius:10px;background:#1a1a1a;border:1px solid #333;color:#aaa;font-size:1.1rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;opacity:0;pointer-events:none;z-index:200;text-decoration:none;}
     .back-to-top.visible{opacity:1;pointer-events:all;}
     .back-to-top:hover{background:var(--accent);border-color:var(--accent);color:#fff;transform:translateY(-3px);}
@@ -156,150 +202,113 @@ layout: none
       <span class="topbar-title">~/writeups</span>
       <div class="topbar-search">
         <span class="sicon">🔍</span>
-        <input type="text" id="search-input" placeholder="Search writeups...">
+        <input type="text" id="search-input" placeholder="Search writeups..." oninput="applyFilters()">
       </div>
     </div>
     <div class="content">
+
       <div class="section-title">Writeups</div>
+
+      <!-- Only HTB and THM toggle buttons -->
       <div class="platform-btns">
-        <a href="/writeups/htb/" class="platform-btn htb-btn">
+        <button class="platform-btn htb-btn" id="htb-toggle" onclick="togglePanel('htb')">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="22" height="22"><path d="M12 1.5L2.25 7.125v9.75L12 22.5l9.75-5.625v-9.75L12 1.5z" stroke="#4ade80" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 1.5v21M2.25 7.125l9.75 5.625 9.75-5.625" stroke="#4ade80" stroke-width="1.5" stroke-linejoin="round"/></svg>
-          HTB Writeups
-        </a>
-        <a href="/writeups/thm/" class="platform-btn thm-btn">
+          HackTheBox <span class="chevron">▼</span>
+        </button>
+        <button class="platform-btn thm-btn" id="thm-toggle" onclick="togglePanel('thm')">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="22" height="22"><circle cx="12" cy="12" r="9.5" stroke="#f87171" stroke-width="1.5"/><path d="M8.5 12a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" stroke="#f87171" stroke-width="1.5"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2" stroke="#f87171" stroke-width="1.5" stroke-linecap="round"/></svg>
-          TryHackMe
-        </a>
-        <a href="#all" class="platform-btn all-btn" onclick="showAll(event)">
-          📋 All Writeups
-        </a>
+          TryHackMe <span class="chevron">▼</span>
+        </button>
       </div>
 
-      <div id="all-section" style="display:none">
-        <div class="section-title" style="margin-top:8px">All Writeups</div>
-        <!-- filter panels for all -->
-        <div style="background:var(--card-bg);border:1px solid var(--card-border);border-radius:14px;padding:26px 28px;margin-bottom:18px;">
-          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px;">
-            <span style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);min-width:90px;font-family:'JetBrains Mono',monospace;">Platform</span>
-            <button class="filter-btn p-btn active" data-filter="platform" data-value="all" onclick="setFilter('platform','all')">All</button>
-            <button class="filter-btn p-btn" data-filter="platform" data-value="htb" onclick="setFilter('platform','htb')">HackTheBox</button>
-            <button class="filter-btn p-btn" data-filter="platform" data-value="thm" onclick="setFilter('platform','thm')">TryHackMe</button>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px;">
-            <span style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);min-width:90px;font-family:'JetBrains Mono',monospace;">Difficulty</span>
-            <button class="filter-btn f-all active" data-filter="difficulty" data-value="all" onclick="setFilter('difficulty','all')">All</button>
-            <button class="filter-btn" data-filter="difficulty" data-value="easy" onclick="setFilter('difficulty','easy')">Easy</button>
-            <button class="filter-btn" data-filter="difficulty" data-value="medium" onclick="setFilter('difficulty','medium')">Medium</button>
-            <button class="filter-btn" data-filter="difficulty" data-value="hard" onclick="setFilter('difficulty','hard')">Hard</button>
-            <button class="filter-btn" data-filter="difficulty" data-value="insane" onclick="setFilter('difficulty','insane')">Insane</button>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-            <span style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);min-width:90px;font-family:'JetBrains Mono',monospace;">OS</span>
-            <button class="filter-btn f-all active" data-filter="os" data-value="all" onclick="setFilter('os','all')">All</button>
-            <button class="filter-btn" data-filter="os" data-value="linux" onclick="setFilter('os','linux')">Linux</button>
-            <button class="filter-btn" data-filter="os" data-value="windows" onclick="setFilter('os','windows')">Windows</button>
-          </div>
+      <!-- HTB filter panel -->
+      <div class="filter-panel" id="panel-htb">
+        <div class="panel-row">
+          <span class="panel-label">Difficulty</span>
+          <button class="filter-btn f-all active" data-group="htb" data-filter="difficulty" data-value="all">All</button>
+          <button class="filter-btn" data-group="htb" data-filter="difficulty" data-value="easy">Easy</button>
+          <button class="filter-btn" data-group="htb" data-filter="difficulty" data-value="medium">Medium</button>
+          <button class="filter-btn" data-group="htb" data-filter="difficulty" data-value="hard">Hard</button>
+          <button class="filter-btn" data-group="htb" data-filter="difficulty" data-value="insane">Insane</button>
         </div>
-        <div class="machines-grid" id="machines-grid"></div>
-        <div class="no-results" id="no-results" style="display:none;text-align:center;padding:60px 14px;color:var(--text-muted);font-size:.88rem;">🔍 No writeups match the selected filters.</div>
+        <div class="panel-row">
+          <span class="panel-label">OS</span>
+          <button class="filter-btn f-all active" data-group="htb" data-filter="os" data-value="all">All</button>
+          <button class="filter-btn" data-group="htb" data-filter="os" data-value="linux">Linux</button>
+          <button class="filter-btn" data-group="htb" data-filter="os" data-value="windows">Windows</button>
+        </div>
       </div>
+
+      <!-- THM filter panel -->
+      <div class="filter-panel" id="panel-thm">
+        <div class="panel-row">
+          <span class="panel-label">Difficulty</span>
+          <button class="filter-btn f-all active" data-group="thm" data-filter="difficulty" data-value="all">All</button>
+          <button class="filter-btn" data-group="thm" data-filter="difficulty" data-value="easy">Easy</button>
+          <button class="filter-btn" data-group="thm" data-filter="difficulty" data-value="medium">Medium</button>
+          <button class="filter-btn" data-group="thm" data-filter="difficulty" data-value="hard">Hard</button>
+          <button class="filter-btn" data-group="thm" data-filter="difficulty" data-value="insane">Insane</button>
+        </div>
+        <div class="panel-row">
+          <span class="panel-label">OS</span>
+          <button class="filter-btn f-all active" data-group="thm" data-filter="os" data-value="all">All</button>
+          <button class="filter-btn" data-group="thm" data-filter="os" data-value="linux">Linux</button>
+          <button class="filter-btn" data-group="thm" data-filter="os" data-value="windows">Windows</button>
+        </div>
+      </div>
+
+      <div class="machines-grid" id="machines-grid">
+        <!-- HTB machines -->
+        <a href="/htb/linux/cap" class="machine-card" data-difficulty="easy" data-platform="htb" data-os="linux" data-name="cap">
+          <span class="card-status-overlay" style="position:absolute;top:10px;right:10px;font-size:.62rem;color:#555;font-family:'JetBrains Mono',monospace;">🔒</span>
+          <img src="/assets/icons/Cap.png" alt="Cap" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="card-icon-placeholder" style="display:none">🏴‍☠️</div>
+          <div class="card-name">Cap</div>
+          <div class="card-badges"><span class="cbadge easy">Easy</span><span class="cbadge htb">HackTheBox</span><span class="cbadge linux">Linux</span></div>
+          <div class="card-tags"><span class="tag-pill">idor</span><span class="tag-pill">pcap-analysis</span><span class="tag-pill">capabilities</span></div>
+        </a>
+        <a href="/htb/linux/broker" class="machine-card" data-difficulty="easy" data-platform="htb" data-os="linux" data-name="broker">
+          <span class="card-status-overlay" style="position:absolute;top:10px;right:10px;font-size:.62rem;color:#555;font-family:'JetBrains Mono',monospace;">🔒</span>
+          <img src="/assets/icons/Broker.png" alt="Broker" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="card-icon-placeholder" style="display:none">🏴‍☠️</div>
+          <div class="card-name">Broker</div>
+          <div class="card-badges"><span class="cbadge easy">Easy</span><span class="cbadge htb">HackTheBox</span><span class="cbadge linux">Linux</span></div>
+          <div class="card-tags"><span class="tag-pill">activemq</span><span class="tag-pill">rce</span><span class="tag-pill">sudo</span></div>
+        </a>
+        <a href="/htb/windows/blue" class="machine-card" data-difficulty="easy" data-platform="htb" data-os="windows" data-name="blue">
+          <span class="card-status-overlay" style="position:absolute;top:10px;right:10px;font-size:.62rem;color:#555;font-family:'JetBrains Mono',monospace;">🔒</span>
+          <img src="/assets/icons/Blue.png" alt="Blue" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="card-icon-placeholder" style="display:none">🏴‍☠️</div>
+          <div class="card-name">Blue</div>
+          <div class="card-badges"><span class="cbadge easy">Easy</span><span class="cbadge htb">HackTheBox</span><span class="cbadge windows">Windows</span></div>
+          <div class="card-tags"><span class="tag-pill">eternalblue</span><span class="tag-pill">ms17-010</span><span class="tag-pill">smb</span></div>
+        </a>
+        <a href="/htb/windows/legacy" class="machine-card" data-difficulty="easy" data-platform="htb" data-os="windows" data-name="legacy">
+          <span class="card-status-overlay" style="position:absolute;top:10px;right:10px;font-size:.62rem;color:#555;font-family:'JetBrains Mono',monospace;">🔒</span>
+          <img src="/assets/icons/Legacy.png" alt="Legacy" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="card-icon-placeholder" style="display:none">🏴‍☠️</div>
+          <div class="card-name">Legacy</div>
+          <div class="card-badges"><span class="cbadge easy">Easy</span><span class="cbadge htb">HackTheBox</span><span class="cbadge windows">Windows</span></div>
+          <div class="card-tags"><span class="tag-pill">ms08-067</span><span class="tag-pill">smb</span><span class="tag-pill">metasploit</span></div>
+        </a>
+        <a href="/htb/windows/expressway" class="machine-card" data-difficulty="easy" data-platform="htb" data-os="windows" data-name="expressway">
+          <span class="card-status-overlay" style="position:absolute;top:10px;right:10px;font-size:.62rem;color:#555;font-family:'JetBrains Mono',monospace;">🔒</span>
+          <img src="/assets/icons/Expressway.png" alt="Expressway" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="card-icon-placeholder" style="display:none">🏴‍☠️</div>
+          <div class="card-name">Expressway</div>
+          <div class="card-badges"><span class="cbadge easy">Easy</span><span class="cbadge htb">HackTheBox</span><span class="cbadge windows">Windows</span></div>
+          <div class="card-tags"><span class="tag-pill">web</span><span class="tag-pill">enumeration</span></div>
+        </a>
+        <!-- THM machines: add here with data-platform="thm" -->
+      </div>
+      <div class="no-results" id="no-results">🔍 No writeups match the selected filters.</div>
+
     </div>
   </main>
 
   <a href="#" class="back-to-top" id="back-to-top" title="Back to top">↑</a>
 
-  <style>
-    .filter-btn{padding:8px 20px;border-radius:8px;font-size:.9rem;font-weight:700;cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif;border:2px solid transparent;background:transparent;}
-    .filter-btn:hover{transform:translateY(-1px);filter:brightness(1.15);}
-    .filter-btn.active{color:#fff!important;transform:translateY(-1px);}
-    .p-btn{background:#1e1e2e;border-color:#818cf8;color:#c7d2fe;}
-    .p-btn.active{background:#3730a3;border-color:#a5b4fc;box-shadow:0 0 10px rgba(129,140,248,.45);}
-    .filter-btn.f-all,.filter-btn[data-filter="difficulty"][data-value="all"],.filter-btn[data-filter="os"][data-value="all"]{background:#1e3a5f;border-color:#3b82f6;color:#93c5fd;}
-    .filter-btn.f-all.active,.filter-btn[data-filter="difficulty"][data-value="all"].active,.filter-btn[data-filter="os"][data-value="all"].active{background:#2563eb;border-color:#60a5fa;box-shadow:0 0 10px rgba(59,130,246,.45);}
-    .filter-btn[data-value="easy"]{background:#14401e;border-color:#22c55e;color:#86efac;}
-    .filter-btn[data-value="easy"].active{background:#16a34a;border-color:#4ade80;box-shadow:0 0 10px rgba(34,197,94,.45);}
-    .filter-btn[data-value="medium"]{background:#431c00;border-color:#f97316;color:#fdba74;}
-    .filter-btn[data-value="medium"].active{background:#ea580c;border-color:#fb923c;box-shadow:0 0 10px rgba(249,115,22,.45);}
-    .filter-btn[data-value="hard"]{background:#3f0f0f;border-color:#ef4444;color:#fca5a5;}
-    .filter-btn[data-value="hard"].active{background:#dc2626;border-color:#f87171;box-shadow:0 0 10px rgba(239,68,68,.45);}
-    .filter-btn[data-value="insane"]{background:#2e1050;border-color:#a855f7;color:#d8b4fe;}
-    .filter-btn[data-value="insane"].active{background:#9333ea;border-color:#c084fc;box-shadow:0 0 10px rgba(168,85,247,.45);}
-    .filter-btn[data-value="linux"]{background:#3a2e00;border-color:#eab308;color:#fef08a;}
-    .filter-btn[data-value="linux"].active{background:#ca8a04;border-color:#facc15;box-shadow:0 0 10px rgba(234,179,8,.45);}
-    .filter-btn[data-value="windows"]{background:#003a40;border-color:#06b6d4;color:#a5f3fc;}
-    .filter-btn[data-value="windows"].active{background:#0891b2;border-color:#67e8f9;box-shadow:0 0 10px rgba(6,182,212,.45);}
-    .machines-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px;}
-    .machine-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:14px;padding:24px 16px 18px;display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;color:inherit;transition:all .18s;cursor:pointer;position:relative;overflow:hidden;}
-    .machine-card:hover{border-color:#333;transform:translateY(-4px);box-shadow:0 8px 32px rgba(0,0,0,.4);}
-    .machine-card.hidden{display:none;}
-    .machine-card .card-icon{width:140px;height:140px;object-fit:contain;border-radius:50%;margin-bottom:16px;display:block;}
-    .machine-card .card-icon-placeholder{width:140px;height:140px;border-radius:50%;margin-bottom:16px;background:#1a1a1a;display:flex;align-items:center;justify-content:center;font-size:3rem;border:2px solid #2a2a2a;}
-    .machine-card .card-name{font-size:1.05rem;font-weight:700;color:var(--text-bright);margin-bottom:12px;}
-    .card-badges{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:10px;}
-    .cbadge{padding:4px 12px;border-radius:6px;font-size:.72rem;font-weight:700;letter-spacing:.3px;font-family:'JetBrains Mono',monospace;border:1.5px solid transparent;}
-    .cbadge.easy{background:#0d2e14;border-color:#22c55e;color:#86efac;}
-    .cbadge.medium{background:#2e1200;border-color:#f97316;color:#fdba74;}
-    .cbadge.hard{background:#2a0a0a;border-color:#ef4444;color:#fca5a5;}
-    .cbadge.insane{background:#1e0a38;border-color:#a855f7;color:#d8b4fe;}
-    .cbadge.htb{background:#0a2218;border-color:#4ade80;color:#bbf7d0;}
-    .cbadge.thm{background:#2a0a0a;border-color:#f87171;color:#fecaca;}
-    .cbadge.linux{background:#261e00;border-color:#eab308;color:#fef08a;}
-    .cbadge.windows{background:#00252a;border-color:#06b6d4;color:#a5f3fc;}
-    .card-tags{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin-top:4px;}
-    .tag-pill{display:inline-flex;align-items:center;padding:2px 8px;border-radius:20px;font-size:.6rem;font-weight:600;background:rgba(255,255,255,.04);border:1px solid #2a2a2a;color:#666;font-family:'JetBrains Mono',monospace;white-space:nowrap;}
-  </style>
-
   <script>
-    const ALL_MACHINES = [
-      {href:'/htb/linux/cap',icon:'/assets/icons/Cap.png',name:'Cap',difficulty:'easy',platform:'htb',os:'linux',tags:['idor','pcap-analysis','capabilities']},
-      {href:'/htb/linux/broker',icon:'/assets/icons/Broker.png',name:'Broker',difficulty:'easy',platform:'htb',os:'linux',tags:['activemq','rce','sudo']},
-      {href:'/htb/windows/blue',icon:'/assets/icons/Blue.png',name:'Blue',difficulty:'easy',platform:'htb',os:'windows',tags:['eternalblue','ms17-010','smb']},
-      {href:'/htb/windows/legacy',icon:'/assets/icons/Legacy.png',name:'Legacy',difficulty:'easy',platform:'htb',os:'windows',tags:['ms08-067','smb','metasploit']},
-      {href:'/htb/windows/expressway',icon:'/assets/icons/Expressway.png',name:'Expressway',difficulty:'easy',platform:'htb',os:'windows',tags:['web','enumeration']},
-    ];
-    const filters = {platform:'all', difficulty:'all', os:'all'};
-
-    function showAll(e){
-      e.preventDefault();
-      document.getElementById('all-section').style.display='block';
-      renderCards();
-    }
-
-    function setFilter(type, value){
-      filters[type] = value;
-      document.querySelectorAll(`.filter-btn[data-filter="${type}"]`).forEach(b=>b.classList.remove('active'));
-      document.querySelector(`.filter-btn[data-filter="${type}"][data-value="${value}"]`).classList.add('active');
-      renderCards();
-    }
-
-    function renderCards(){
-      const search = document.getElementById('search-input').value.toLowerCase();
-      const grid = document.getElementById('machines-grid');
-      grid.innerHTML = '';
-      let count = 0;
-      ALL_MACHINES.forEach(m=>{
-        if(filters.platform !== 'all' && m.platform !== filters.platform) return;
-        if(filters.difficulty !== 'all' && m.difficulty !== filters.difficulty) return;
-        if(filters.os !== 'all' && m.os !== filters.os) return;
-        if(search && !m.name.toLowerCase().includes(search)) return;
-        count++;
-        const platformBadge = m.platform === 'htb' ? '<span class="cbadge htb">HackTheBox</span>' : '<span class="cbadge thm">TryHackMe</span>';
-        const osBadge = m.os === 'linux' ? '<span class="cbadge linux">Linux</span>' : '<span class="cbadge windows">Windows</span>';
-        const tags = m.tags.map(t=>`<span class="tag-pill">${t}</span>`).join('');
-        grid.innerHTML += `<a href="${m.href}" class="machine-card">
-          <span style="position:absolute;top:10px;right:10px;font-size:.62rem;color:#555;font-family:'JetBrains Mono',monospace;">🔒</span>
-          <img src="${m.icon}" alt="${m.name}" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="card-icon-placeholder" style="display:none">🏴&#x200d;☠️</div>
-          <div class="card-name">${m.name}</div>
-          <div class="card-badges"><span class="cbadge ${m.difficulty}">${m.difficulty.charAt(0).toUpperCase()+m.difficulty.slice(1)}</span>${platformBadge}${osBadge}</div>
-          <div class="card-tags">${tags}</div>
-        </a>`;
-      });
-      document.getElementById('no-results').style.display = count === 0 ? 'block' : 'none';
-    }
-
-    document.getElementById('search-input').addEventListener('input', ()=>{ if(document.getElementById('all-section').style.display !== 'none') renderCards(); });
-
     function toggleTheme(){
       const html=document.documentElement;
       const isDark=html.getAttribute('data-theme')==='dark';
@@ -324,6 +333,59 @@ layout: none
       parent.classList.toggle('open');
       children.classList.toggle('open');
     }
+
+    let activePlatform = null;
+    const state = { htb:{difficulty:'all',os:'all'}, thm:{difficulty:'all',os:'all'} };
+
+    function togglePanel(platform){
+      const isOpen = activePlatform === platform;
+      ['htb','thm'].forEach(p=>{
+        document.getElementById('panel-'+p).classList.remove('open');
+        document.getElementById(p+'-toggle').classList.remove('open');
+      });
+      if(!isOpen){
+        document.getElementById('panel-'+platform).classList.add('open');
+        document.getElementById(platform+'-toggle').classList.add('open');
+        activePlatform = platform;
+      } else {
+        activePlatform = null;
+      }
+      applyFilters();
+    }
+
+    document.querySelectorAll('.filter-btn[data-group]').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const group=btn.dataset.group, filter=btn.dataset.filter;
+        state[group][filter]=btn.dataset.value;
+        document.querySelectorAll(`.filter-btn[data-group="${group}"][data-filter="${filter}"]`).forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        applyFilters();
+      });
+    });
+
+    function applyFilters(){
+      const search = document.getElementById('search-input').value.toLowerCase();
+      const cards = document.querySelectorAll('.machine-card');
+      let visible = 0;
+      cards.forEach(card=>{
+        let show = false;
+        if(activePlatform && card.dataset.platform === activePlatform){
+          show = true;
+          const s = state[activePlatform];
+          if(s.difficulty !== 'all' && s.difficulty !== card.dataset.difficulty) show = false;
+          if(s.os !== 'all' && s.os !== card.dataset.os) show = false;
+          if(search && !card.dataset.name.includes(search)) show = false;
+        }
+        card.classList.toggle('hidden', !show);
+        if(show) visible++;
+      });
+      document.getElementById('no-results').style.display = (activePlatform && visible === 0) ? 'block' : 'none';
+    }
+
+    window.addEventListener('load',()=>{
+      // hide all cards on load
+      applyFilters();
+    });
   </script>
 </body>
 </html>
