@@ -31,10 +31,9 @@ layout: none
     body{background:var(--body-bg);color:var(--text);font-family:'Inter',sans-serif;display:flex;min-height:100vh;transition:background .2s,color .2s;}
     .sidebar{width:260px;min-height:100vh;background:var(--sidebar-bg);border-right:1px solid var(--sidebar-border);position:fixed;top:0;left:0;overflow-y:auto;display:flex;flex-direction:column;}
     .logo{padding:24px 20px 18px;border-bottom:1px solid var(--divider);display:flex;flex-direction:column;align-items:center;text-align:center;}
-    .logo-img{width:64px;height:64px;object-fit:contain;display:block;margin-bottom:10px;}
-    .logo .name{font-size:1.1rem;font-weight:700;color:var(--text-bright);letter-spacing:-.3px;}
+    .logo-img{width:80px;height:80px;object-fit:contain;display:block;margin-bottom:14px;}
+    .logo .name{font-size:1.1rem;font-weight:700;color:var(--text-bright);letter-spacing:-.3px;margin-top:4px;}
     .logo .dot{color:var(--accent);}
-    .logo .tagline{font-size:.7rem;color:var(--text-muted);margin-top:5px;}
     .search-wrap{padding:12px 14px;border-bottom:1px solid var(--divider);}
     .search-wrap input{width:100%;background:var(--pre-bg);border:1px solid var(--card-border);border-radius:5px;padding:7px 11px;color:var(--text);font-size:.81rem;font-family:inherit;outline:none;}
     .search-wrap input:focus{border-color:var(--accent);}
@@ -111,9 +110,8 @@ layout: none
 <body>
   <nav class="sidebar">
     <div class="logo">
-      <img src="/assets/img/logo.svg" alt="PWN" class="logo-img">
+      <img src="/assets/img/pwntagonist.png" alt="Pwntagonist" class="logo-img">
       <div class="name">Pwn<span class="dot">tagonist</span></div>
-      <div class="tagline">CTF writeups &amp; pentesting notes</div>
     </div>
     <div class="search-wrap"><input type="text" placeholder="Search..."></div>
     <div class="nav-body">
