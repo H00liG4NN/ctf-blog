@@ -5,7 +5,7 @@ difficulty: Easy
 os: Linux
 platform: htb
 status: coming-soon
-machine_icon: /assets/writeups/icons/Cap.png
+machine_icon: /assets/icons/Cap.png
 tags:
   - linux
   - easy
