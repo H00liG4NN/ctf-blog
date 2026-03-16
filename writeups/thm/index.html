@@ -136,7 +136,7 @@ layout: none
           HTB Writeups
         </a>
         <a href="/writeups/thm/" class="active">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="13" height="13"><circle cx="12" cy="12" r="9.5" stroke="#f87171" stroke-width="1.5"/><path d="M8.5 12a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" stroke="#f87171" stroke-width="1.5"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2" stroke="#f87171" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <img src="/assets/icons/tryhackme.png" alt="THM" width="13" height="13" style="flex-shrink:0;">
           THM Writeups
         </a>
       </div>
@@ -152,7 +152,7 @@ layout: none
         HackTheBox ↗
       </a>
       <a class="thm-link" href="https://tryhackme.com/p/Hooligannn" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="14" height="14"><circle cx="12" cy="12" r="9.5" stroke="#f87171" stroke-width="1.5"/><path d="M8.5 12a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" stroke="#f87171" stroke-width="1.5"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2" stroke="#f87171" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <img src="/assets/icons/tryhackme.png" alt="THM" width="14" height="14" style="flex-shrink:0;">
         TryHackMe ↗
       </a>
       <a class="linkedin-link" href="https://www.linkedin.com/in/mati-hubenko-40720a2a7/" target="_blank">
@@ -183,7 +183,6 @@ layout: none
     </div>
     <div class="content">
       <div class="section-title">TryHackMe Writeups</div>
-
       <div class="filter-panel">
         <div class="panel-row">
           <span class="panel-label">Difficulty</span>
@@ -200,8 +199,6 @@ layout: none
           <button class="filter-btn" data-filter="os" data-value="windows">Windows</button>
         </div>
       </div>
-
-      <!-- THM cards go here — empty state shown until rooms are added -->
       <div id="machines-grid" class="machines-grid"></div>
       <div class="empty-state" id="empty-state">
         <div class="icon">🎯</div>
@@ -215,12 +212,8 @@ layout: none
   <a href="#" class="back-to-top" id="back-to-top" title="Back to top">↑</a>
 
   <script>
-    const THM_MACHINES = [
-      // Add THM rooms here when ready, e.g.:
-      // {href:'/thm/linux/room-name',icon:'/assets/icons/Room.png',name:'Room Name',difficulty:'easy',os:'linux',tags:['tag1','tag2']},
-    ];
+    const THM_MACHINES = [];
     const state = {difficulty:'all', os:'all'};
-
     function init(){
       const grid = document.getElementById('machines-grid');
       THM_MACHINES.forEach(m=>{
@@ -238,7 +231,6 @@ layout: none
       if(THM_MACHINES.length > 0) document.getElementById('empty-state').style.display='none';
       applyFilters();
     }
-
     document.querySelectorAll('.filter-btn').forEach(btn=>{
       btn.addEventListener('click',()=>{
         const filter = btn.dataset.filter;
@@ -248,7 +240,6 @@ layout: none
         applyFilters();
       });
     });
-
     function applyFilters(){
       if(THM_MACHINES.length === 0) return;
       const search = document.getElementById('search-input').value.toLowerCase();
@@ -264,7 +255,6 @@ layout: none
       });
       document.getElementById('no-results').style.display = visible === 0 && THM_MACHINES.length > 0 ? 'block' : 'none';
     }
-
     function toggleTheme(){
       const html=document.documentElement;
       const isDark=html.getAttribute('data-theme')==='dark';
