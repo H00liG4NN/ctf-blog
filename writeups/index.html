@@ -52,7 +52,7 @@ layout: none
     .sidebar a.linkedin-link:hover{color:#3b82f6;background:rgba(10,102,194,.07);border-left-color:#0a66c2;}
     .sidebar a.github-link{color:#a78bfa;}
     .sidebar a.github-link:hover{color:#c4b5fd;background:rgba(167,139,250,.07);border-left-color:#a78bfa;}
-    .nav-parent{display:flex;align-items:center;gap:8px;padding:6px 18px;color:var(--text-muted);text-decoration:none;font-size:.845rem;font-weight:500;transition:all .13s;border-left:2px solid transparent;cursor:pointer;justify-content:space-between;}
+    .nav-parent{display:flex;align-items:center;gap:8px;padding:6px 18px;color:var(--text-muted);font-size:.845rem;font-weight:500;transition:all .13s;border-left:2px solid transparent;cursor:pointer;justify-content:space-between;}
     .nav-parent:hover{color:var(--text-bright);background:var(--nav-hover);border-left-color:#3a1515;}
     .nav-parent.open{color:var(--accent-bright);background:var(--accent-glow);border-left-color:var(--accent);}
     .nav-parent-left{display:flex;align-items:center;gap:8px;}
@@ -77,6 +77,7 @@ layout: none
     .content{padding:36px 48px;}
     .section-title{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--accent);margin-bottom:18px;display:flex;align-items:center;gap:10px;}
     .section-title::after{content:'';flex:1;height:1px;background:var(--divider);}
+    /* Platform buttons */
     .platform-btns{display:flex;gap:24px;justify-content:center;margin-bottom:24px;}
     .platform-btn{flex:1;max-width:380px;padding:24px 32px;border-radius:14px;font-size:1.25rem;font-weight:800;cursor:pointer;transition:all .18s;font-family:'Inter',sans-serif;display:flex;align-items:center;justify-content:center;gap:14px;border:2px solid transparent;letter-spacing:-.3px;}
     .platform-btn.htb-btn{background:#0f3320;border-color:#4ade80;color:#bbf7d0;}
@@ -85,13 +86,14 @@ layout: none
     .platform-btn.thm-btn:hover,.platform-btn.thm-btn.open{background:#b91c1c;border-color:#fca5a5;color:#fff;box-shadow:0 0 28px rgba(248,113,113,.4);transform:translateY(-3px);}
     .platform-btn .chevron{font-size:.9rem;transition:transform .2s;}
     .platform-btn.open .chevron{transform:rotate(180deg);}
+    /* Filter panels */
     .filter-panel{background:var(--card-bg);border:1px solid var(--card-border);border-radius:14px;padding:26px 28px;margin-bottom:18px;display:none;animation:slideDown .18s ease;}
     .filter-panel.open{display:block;}
     @keyframes slideDown{from{opacity:0;transform:translateY(-8px);}to{opacity:1;transform:translateY(0);}}
     .panel-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px;}
     .panel-row:last-child{margin-bottom:0;}
     .panel-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);min-width:90px;font-family:'JetBrains Mono',monospace;}
-    .filter-btn{padding:8px 20px;border-radius:8px;font-size:.9rem;font-weight:700;cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif;border:2px solid transparent;}
+    .filter-btn{padding:8px 20px;border-radius:8px;font-size:.9rem;font-weight:700;cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif;border:2px solid transparent;background:transparent;}
     .filter-btn:hover{transform:translateY(-1px);filter:brightness(1.15);}
     .filter-btn.active{color:#fff!important;transform:translateY(-1px);}
     .filter-btn.f-all{background:#1e3a5f;border-color:#3b82f6;color:#93c5fd;}
@@ -113,6 +115,7 @@ layout: none
     .filter-status .count span{color:var(--text-bright);font-weight:700;}
     .clear-btn{padding:4px 12px;border-radius:4px;font-size:.72rem;font-weight:600;background:transparent;border:1px solid var(--card-border);color:var(--text-muted);cursor:pointer;transition:all .13s;font-family:'Inter',sans-serif;}
     .clear-btn:hover{border-color:var(--accent);color:var(--accent);}
+    /* Machine cards */
     .machines-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px;}
     .machine-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:14px;padding:24px 16px 18px;display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;color:inherit;transition:all .18s;cursor:pointer;position:relative;overflow:hidden;}
     .machine-card:hover{border-color:#333;transform:translateY(-4px);box-shadow:0 8px 32px rgba(0,0,0,.4);}
@@ -151,23 +154,21 @@ layout: none
     <div class="nav-body">
       <div class="nav-section">Navigation</div>
       <a href="/">🏠 Home</a>
-
       <div class="nav-section">Writeups</div>
       <div class="nav-parent open" id="nav-writeups" onclick="toggleNav('writeups')">
         <div class="nav-parent-left">📝 All Writeups</div>
         <span class="nav-chevron">▼</span>
       </div>
       <div class="nav-children open" id="nav-children-writeups">
-        <a href="/writeups/#htb">
+        <a href="/writeups/#htb" id="sidebar-htb-link">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="13" height="13"><path d="M12 1.5L2.25 7.125v9.75L12 22.5l9.75-5.625v-9.75L12 1.5z" stroke="#4ade80" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 1.5v21M2.25 7.125l9.75 5.625 9.75-5.625" stroke="#4ade80" stroke-width="1.5" stroke-linejoin="round"/></svg>
           HTB Writeups
         </a>
-        <a href="/writeups/#thm">
+        <a href="/writeups/#thm" id="sidebar-thm-link">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="13" height="13"><circle cx="12" cy="12" r="9.5" stroke="#f87171" stroke-width="1.5"/><path d="M8.5 12a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" stroke="#f87171" stroke-width="1.5"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2" stroke="#f87171" stroke-width="1.5" stroke-linecap="round"/></svg>
           THM Writeups
         </a>
       </div>
-
       <div class="nav-section">Tools &amp; Notes</div>
       <a href="/tools/nmap">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="15" height="15" style="flex-shrink:0"><ellipse cx="50" cy="50" rx="46" ry="30" fill="none" stroke="#38bdf8" stroke-width="5"/><circle cx="50" cy="50" r="13" fill="#38bdf8"/><circle cx="50" cy="50" r="6" fill="#0f172a"/><line x1="50" y1="4" x2="50" y2="20" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/><line x1="50" y1="80" x2="50" y2="96" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/><line x1="4" y1="50" x2="20" y2="50" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/><line x1="80" y1="50" x2="96" y2="50" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/></svg>
@@ -224,6 +225,7 @@ layout: none
         </button>
       </div>
 
+      <!-- HTB filter panel -->
       <div class="filter-panel" id="panel-htb">
         <div class="panel-row">
           <span class="panel-label">Difficulty</span>
@@ -241,6 +243,7 @@ layout: none
         </div>
       </div>
 
+      <!-- THM filter panel -->
       <div class="filter-panel" id="panel-thm">
         <div class="panel-row">
           <span class="panel-label">Difficulty</span>
@@ -264,91 +267,58 @@ layout: none
       </div>
 
       <div class="machines-grid" id="machines-grid">
-
+        <!-- HTB machines: data-platform="htb" -->
         <a href="/htb/linux/cap" class="machine-card" data-difficulty="easy" data-platform="htb" data-os="linux" data-name="cap">
           <span class="card-status-overlay">🔒</span>
           <img src="/assets/icons/Cap.png" alt="Cap" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="card-icon-placeholder" style="display:none">🏴‍☠️</div>
           <div class="card-name">Cap</div>
           <div class="card-badges">
-            <span class="cbadge easy">Easy</span>
-            <span class="cbadge htb">HackTheBox</span>
-            <span class="cbadge linux">Linux</span>
+            <span class="cbadge easy">Easy</span><span class="cbadge htb">HackTheBox</span><span class="cbadge linux">Linux</span>
           </div>
-          <div class="card-tags">
-            <span class="tag-pill">idor</span>
-            <span class="tag-pill">pcap-analysis</span>
-            <span class="tag-pill">capabilities</span>
-          </div>
+          <div class="card-tags"><span class="tag-pill">idor</span><span class="tag-pill">pcap-analysis</span><span class="tag-pill">capabilities</span></div>
         </a>
-
         <a href="/htb/linux/broker" class="machine-card" data-difficulty="easy" data-platform="htb" data-os="linux" data-name="broker">
           <span class="card-status-overlay">🔒</span>
           <img src="/assets/icons/Broker.png" alt="Broker" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="card-icon-placeholder" style="display:none">🏴‍☠️</div>
           <div class="card-name">Broker</div>
           <div class="card-badges">
-            <span class="cbadge easy">Easy</span>
-            <span class="cbadge htb">HackTheBox</span>
-            <span class="cbadge linux">Linux</span>
+            <span class="cbadge easy">Easy</span><span class="cbadge htb">HackTheBox</span><span class="cbadge linux">Linux</span>
           </div>
-          <div class="card-tags">
-            <span class="tag-pill">activemq</span>
-            <span class="tag-pill">rce</span>
-            <span class="tag-pill">sudo</span>
-          </div>
+          <div class="card-tags"><span class="tag-pill">activemq</span><span class="tag-pill">rce</span><span class="tag-pill">sudo</span></div>
         </a>
-
         <a href="/htb/windows/blue" class="machine-card" data-difficulty="easy" data-platform="htb" data-os="windows" data-name="blue">
           <span class="card-status-overlay">🔒</span>
           <img src="/assets/icons/Blue.png" alt="Blue" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="card-icon-placeholder" style="display:none">🏴‍☠️</div>
           <div class="card-name">Blue</div>
           <div class="card-badges">
-            <span class="cbadge easy">Easy</span>
-            <span class="cbadge htb">HackTheBox</span>
-            <span class="cbadge windows">Windows</span>
+            <span class="cbadge easy">Easy</span><span class="cbadge htb">HackTheBox</span><span class="cbadge windows">Windows</span>
           </div>
-          <div class="card-tags">
-            <span class="tag-pill">eternalblue</span>
-            <span class="tag-pill">ms17-010</span>
-            <span class="tag-pill">smb</span>
-          </div>
+          <div class="card-tags"><span class="tag-pill">eternalblue</span><span class="tag-pill">ms17-010</span><span class="tag-pill">smb</span></div>
         </a>
-
         <a href="/htb/windows/legacy" class="machine-card" data-difficulty="easy" data-platform="htb" data-os="windows" data-name="legacy">
           <span class="card-status-overlay">🔒</span>
           <img src="/assets/icons/Legacy.png" alt="Legacy" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="card-icon-placeholder" style="display:none">🏴‍☠️</div>
           <div class="card-name">Legacy</div>
           <div class="card-badges">
-            <span class="cbadge easy">Easy</span>
-            <span class="cbadge htb">HackTheBox</span>
-            <span class="cbadge windows">Windows</span>
+            <span class="cbadge easy">Easy</span><span class="cbadge htb">HackTheBox</span><span class="cbadge windows">Windows</span>
           </div>
-          <div class="card-tags">
-            <span class="tag-pill">ms08-067</span>
-            <span class="tag-pill">smb</span>
-            <span class="tag-pill">metasploit</span>
-          </div>
+          <div class="card-tags"><span class="tag-pill">ms08-067</span><span class="tag-pill">smb</span><span class="tag-pill">metasploit</span></div>
         </a>
-
         <a href="/htb/windows/expressway" class="machine-card" data-difficulty="easy" data-platform="htb" data-os="windows" data-name="expressway">
           <span class="card-status-overlay">🔒</span>
           <img src="/assets/icons/Expressway.png" alt="Expressway" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="card-icon-placeholder" style="display:none">🏴‍☠️</div>
           <div class="card-name">Expressway</div>
           <div class="card-badges">
-            <span class="cbadge easy">Easy</span>
-            <span class="cbadge htb">HackTheBox</span>
-            <span class="cbadge windows">Windows</span>
+            <span class="cbadge easy">Easy</span><span class="cbadge htb">HackTheBox</span><span class="cbadge windows">Windows</span>
           </div>
-          <div class="card-tags">
-            <span class="tag-pill">web</span>
-            <span class="tag-pill">enumeration</span>
-          </div>
+          <div class="card-tags"><span class="tag-pill">web</span><span class="tag-pill">enumeration</span></div>
         </a>
-
+        <!-- THM machines: data-platform="thm" — add your THM machines here -->
       </div>
       <div class="no-results" id="no-results">🔍 No writeups match the selected filters.</div>
 
@@ -370,10 +340,7 @@ layout: none
       const saved=localStorage.getItem('pwn-theme');
       if(saved){
         document.documentElement.setAttribute('data-theme',saved);
-        if(saved==='light'){
-          document.getElementById('theme-icon').textContent='☀️';
-          document.getElementById('theme-label').textContent='Light mode';
-        }
+        if(saved==='light'){document.getElementById('theme-icon').textContent='☀️';document.getElementById('theme-label').textContent='Light mode';}
       }
     })();
     const btt=document.getElementById('back-to-top');
@@ -385,9 +352,14 @@ layout: none
       parent.classList.toggle('open');
       children.classList.toggle('open');
     }
-    const state={platform:'all',htb:{difficulty:'all',os:'all'},thm:{difficulty:'all',os:'all'}};
+
+    // Active platform state
+    let activePlatform = null;
+    const state = { htb:{difficulty:'all',os:'all'}, thm:{difficulty:'all',os:'all'} };
+
     function togglePanel(platform){
-      const isOpen=document.getElementById('panel-'+platform).classList.contains('open');
+      const isOpen = activePlatform === platform;
+      // Close all
       ['htb','thm'].forEach(p=>{
         document.getElementById('panel-'+p).classList.remove('open');
         document.getElementById(p+'-toggle').classList.remove('open');
@@ -395,44 +367,56 @@ layout: none
       if(!isOpen){
         document.getElementById('panel-'+platform).classList.add('open');
         document.getElementById(platform+'-toggle').classList.add('open');
-        state.platform=platform;
-      } else { state.platform='all'; }
+        activePlatform = platform;
+      } else {
+        activePlatform = null;
+      }
       applyFilters();
     }
+
     document.querySelectorAll('.filter-btn[data-group]').forEach(btn=>{
       btn.addEventListener('click',()=>{
-        const group=btn.dataset.group,filter=btn.dataset.filter;
+        const group=btn.dataset.group, filter=btn.dataset.filter;
         state[group][filter]=btn.dataset.value;
         document.querySelectorAll(`.filter-btn[data-group="${group}"][data-filter="${filter}"]`).forEach(b=>b.classList.remove('active'));
         btn.classList.add('active');
         applyFilters();
       });
     });
+
     function applyFilters(){
-      const search=document.getElementById('search-input').value.toLowerCase();
-      const cards=document.querySelectorAll('.machine-card');
-      let visible=0;
+      const search = document.getElementById('search-input').value.toLowerCase();
+      const cards = document.querySelectorAll('.machine-card');
+      let visible = 0;
       cards.forEach(card=>{
-        let show=true;
-        if(search&&!card.dataset.name.includes(search)) show=false;
-        if(state.platform!=='all'){
-          if(card.dataset.platform!==state.platform){show=false;}
-          else{
-            const s=state[state.platform];
-            if(s.difficulty!=='all'&&s.difficulty!==card.dataset.difficulty) show=false;
-            if(s.os!=='all'&&s.os!==card.dataset.os) show=false;
-          }
+        let show = false;
+        const platform = card.dataset.platform;
+        // If no platform button active, hide all cards
+        if(!activePlatform){
+          show = false;
+        } else if(platform !== activePlatform){
+          // Different platform — always hide
+          show = false;
+        } else {
+          show = true;
+          const s = state[activePlatform];
+          if(s.difficulty !== 'all' && s.difficulty !== card.dataset.difficulty) show = false;
+          if(s.os !== 'all' && s.os !== card.dataset.os) show = false;
+          if(search && !card.dataset.name.includes(search)) show = false;
         }
-        card.classList.toggle('hidden',!show);
+        card.classList.toggle('hidden', !show);
         if(show) visible++;
       });
-      document.getElementById('showing-count').textContent=visible;
-      document.getElementById('no-results').style.display=visible===0?'block':'none';
+      document.getElementById('showing-count').textContent = visible;
+      const total = activePlatform ? document.querySelectorAll(`.machine-card[data-platform="${activePlatform}"]`).length : 0;
+      document.getElementById('total-count').textContent = total;
+      document.getElementById('no-results').style.display = (activePlatform && visible === 0) ? 'block' : 'none';
     }
+
     function clearFilters(){
-      state.platform='all';
-      state.htb={difficulty:'all',os:'all'};
-      state.thm={difficulty:'all',os:'all'};
+      activePlatform = null;
+      state.htb = {difficulty:'all',os:'all'};
+      state.thm = {difficulty:'all',os:'all'};
       ['htb','thm'].forEach(p=>{
         document.getElementById('panel-'+p).classList.remove('open');
         document.getElementById(p+'-toggle').classList.remove('open');
@@ -442,18 +426,16 @@ layout: none
       document.getElementById('search-input').value='';
       applyFilters();
     }
-    function updateStats(){
-      const cards=[...document.querySelectorAll('.machine-card')];
-      document.getElementById('total-count').textContent=cards.length;
-      document.getElementById('showing-count').textContent=cards.length;
-    }
-    updateStats();
+
     // Handle hash links from sidebar
     window.addEventListener('load',()=>{
-      const hash=window.location.hash;
-      if(hash==='#htb') togglePanel('htb');
-      else if(hash==='#thm') togglePanel('thm');
+      const hash = window.location.hash;
+      if(hash === '#htb') togglePanel('htb');
+      else if(hash === '#thm') togglePanel('thm');
     });
+
+    // Init counts
+    applyFilters();
   </script>
 </body>
 </html>

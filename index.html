@@ -29,7 +29,6 @@ layout: none
     }
     *{box-sizing:border-box;margin:0;padding:0;}
     body{background:var(--body-bg);color:var(--text);font-family:'Inter',sans-serif;display:flex;min-height:100vh;transition:background .2s,color .2s;}
-    /* SIDEBAR */
     .sidebar{width:260px;min-height:100vh;background:var(--sidebar-bg);border-right:1px solid var(--sidebar-border);position:fixed;top:0;left:0;overflow-y:auto;display:flex;flex-direction:column;}
     .logo{padding:24px 20px 18px;border-bottom:1px solid var(--divider);display:flex;flex-direction:column;align-items:center;text-align:center;}
     .logo-img{width:64px;height:64px;object-fit:contain;display:block;margin-bottom:10px;}
@@ -53,8 +52,7 @@ layout: none
     .sidebar a.linkedin-link:hover{color:#3b82f6;background:rgba(10,102,194,.07);border-left-color:#0a66c2;}
     .sidebar a.github-link{color:#a78bfa;}
     .sidebar a.github-link:hover{color:#c4b5fd;background:rgba(167,139,250,.07);border-left-color:#a78bfa;}
-    /* Collapsible writeups nav */
-    .nav-parent{display:flex;align-items:center;gap:8px;padding:6px 18px;color:var(--text-muted);text-decoration:none;font-size:.845rem;font-weight:500;transition:all .13s;border-left:2px solid transparent;cursor:pointer;justify-content:space-between;}
+    .nav-parent{display:flex;align-items:center;gap:8px;padding:6px 18px;color:var(--text-muted);font-size:.845rem;font-weight:500;transition:all .13s;border-left:2px solid transparent;cursor:pointer;justify-content:space-between;}
     .nav-parent:hover{color:var(--text-bright);background:var(--nav-hover);border-left-color:#3a1515;}
     .nav-parent.open{color:var(--accent-bright);background:var(--accent-glow);border-left-color:var(--accent);}
     .nav-parent-left{display:flex;align-items:center;gap:8px;}
@@ -67,36 +65,30 @@ layout: none
     .sidebar-footer-copy{font-size:.68rem;color:#666;font-family:'JetBrains Mono',monospace;}
     .theme-toggle{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:7px 12px;border-radius:7px;background:var(--card-bg);border:1px solid var(--divider);color:var(--text-muted);font-size:.78rem;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;transition:all .15s;}
     .theme-toggle:hover{border-color:var(--accent);color:var(--text-bright);}
-    /* MAIN */
     .main{margin-left:260px;padding:0;width:100%;display:flex;flex-direction:column;}
     .topbar{position:sticky;top:0;z-index:100;background:rgba(13,13,13,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--divider);padding:14px 48px;display:flex;align-items:center;gap:16px;}
     [data-theme="light"] .topbar{background:rgba(255,255,255,.92);}
     .topbar-title{font-size:.78rem;font-weight:700;color:var(--accent);font-family:'JetBrains Mono',monospace;white-space:nowrap;letter-spacing:.5px;}
     .content{padding:48px;}
-    /* HERO */
-    .hero{padding:60px 0 48px;border-bottom:1px solid var(--divider);margin-bottom:48px;}
+    /* HERO - centered */
+    .hero{padding:60px 0 48px;border-bottom:1px solid var(--divider);margin-bottom:48px;display:flex;flex-direction:column;align-items:center;text-align:center;}
     .hero-tag{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent);font-family:'JetBrains Mono',monospace;margin-bottom:16px;}
     .hero-title{font-size:3rem;font-weight:800;color:var(--text-bright);line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;}
     .hero-title span{color:var(--accent);}
-    .hero-sub{font-size:1.05rem;color:var(--text-muted);max-width:560px;line-height:1.65;margin-bottom:32px;}
-    .hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
-    .hero-btn{padding:11px 24px;border-radius:8px;font-size:.88rem;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;transition:all .15s;display:inline-flex;align-items:center;gap:8px;}
-    .hero-btn.primary{background:var(--accent);border:2px solid var(--accent);color:#fff;}
-    .hero-btn.primary:hover{background:var(--accent-bright);border-color:var(--accent-bright);transform:translateY(-2px);box-shadow:0 4px 20px rgba(224,82,82,.35);}
-    .hero-btn.secondary{background:transparent;border:2px solid var(--card-border);color:var(--text-muted);}
-    .hero-btn.secondary:hover{border-color:#555;color:var(--text-bright);transform:translateY(-2px);}
-    /* STATS */
-    .stats-row{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:52px;}
-    .stat-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:20px 28px;flex:1;min-width:120px;text-align:center;transition:border-color .15s;}
-    .stat-card:hover{border-color:var(--accent);}
-    .stat-num{font-size:2rem;font-weight:800;color:var(--text-bright);font-family:'JetBrains Mono',monospace;line-height:1;}
-    .stat-num span{color:var(--accent);}
-    .stat-label{font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-top:6px;}
+    .hero-sub{font-size:1.05rem;color:var(--text-muted);max-width:560px;line-height:1.65;}
     /* SECTION */
     .section-title{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--accent);margin-bottom:18px;display:flex;align-items:center;gap:10px;}
     .section-title::after{content:'';flex:1;height:1px;background:var(--divider);}
     .section-title a{font-size:.62rem;color:var(--text-muted);text-decoration:none;letter-spacing:.5px;margin-left:4px;white-space:nowrap;}
     .section-title a:hover{color:var(--accent);}
+    /* LATEST POSTS */
+    .posts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-bottom:48px;}
+    .post-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:10px;padding:20px;transition:all .15s;text-decoration:none;color:inherit;display:block;}
+    .post-card:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .post-card .post-tag{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:8px;font-family:'JetBrains Mono',monospace;}
+    .post-card .post-title{font-size:.95rem;font-weight:600;color:var(--text-bright);margin-bottom:6px;line-height:1.4;}
+    .post-card .post-desc{font-size:.78rem;color:var(--text-muted);line-height:1.5;}
+    .post-card .post-date{font-size:.68rem;color:#555;margin-top:10px;font-family:'JetBrains Mono',monospace;}
     /* LATEST WRITEUPS GRID */
     .machines-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px;margin-bottom:48px;}
     .machine-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:14px;padding:22px 14px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;color:inherit;transition:all .18s;position:relative;overflow:hidden;}
@@ -114,15 +106,6 @@ layout: none
     .cbadge.thm{background:#2a0a0a;border-color:#f87171;color:#fecaca;}
     .cbadge.linux{background:#261e00;border-color:#eab308;color:#fef08a;}
     .cbadge.windows{background:#00252a;border-color:#06b6d4;color:#a5f3fc;}
-    /* LATEST POSTS */
-    .posts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-bottom:48px;}
-    .post-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:10px;padding:20px;transition:all .15s;text-decoration:none;color:inherit;display:block;}
-    .post-card:hover{border-color:var(--accent);transform:translateY(-2px);}
-    .post-card .post-tag{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:8px;font-family:'JetBrains Mono',monospace;}
-    .post-card .post-title{font-size:.95rem;font-weight:600;color:var(--text-bright);margin-bottom:6px;line-height:1.4;}
-    .post-card .post-desc{font-size:.78rem;color:var(--text-muted);line-height:1.5;}
-    .post-card .post-date{font-size:.68rem;color:#555;margin-top:10px;font-family:'JetBrains Mono',monospace;}
-    /* BACK TO TOP */
     .back-to-top{position:fixed;bottom:28px;right:28px;width:42px;height:42px;border-radius:10px;background:#1a1a1a;border:1px solid #333;color:#aaa;font-size:1.1rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;opacity:0;pointer-events:none;z-index:200;text-decoration:none;}
     .back-to-top.visible{opacity:1;pointer-events:all;}
     .back-to-top:hover{background:var(--accent);border-color:var(--accent);color:#fff;transform:translateY(-3px);}
@@ -140,8 +123,6 @@ layout: none
     <div class="nav-body">
       <div class="nav-section">Navigation</div>
       <a href="/" class="active">🏠 Home</a>
-
-      <!-- Collapsible Writeups -->
       <div class="nav-section">Writeups</div>
       <div class="nav-parent" id="nav-writeups" onclick="toggleNav('writeups')">
         <div class="nav-parent-left">📝 All Writeups</div>
@@ -157,7 +138,6 @@ layout: none
           THM Writeups
         </a>
       </div>
-
       <div class="nav-section">Tools &amp; Notes</div>
       <a href="/tools/nmap">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="15" height="15" style="flex-shrink:0"><ellipse cx="50" cy="50" rx="46" ry="30" fill="none" stroke="#38bdf8" stroke-width="5"/><circle cx="50" cy="50" r="13" fill="#38bdf8"/><circle cx="50" cy="50" r="6" fill="#0f172a"/><line x1="50" y1="4" x2="50" y2="20" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/><line x1="50" y1="80" x2="50" y2="96" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/><line x1="4" y1="50" x2="20" y2="50" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/><line x1="80" y1="50" x2="96" y2="50" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/></svg>
@@ -197,107 +177,14 @@ layout: none
     </div>
     <div class="content">
 
-      <!-- HERO -->
+      <!-- HERO: centered, no buttons, no stats -->
       <div class="hero">
         <div class="hero-tag">> whoami</div>
         <h1 class="hero-title">Pwn<span>tagonist</span></h1>
         <p class="hero-sub">Cybersecurity insights, CTF adventures, and thoughts on tech &amp; privacy.</p>
-        <div class="hero-btns">
-          <a href="/writeups/" class="hero-btn primary">📝 View Writeups</a>
-          <a href="/whoami" class="hero-btn secondary">👤 About Me</a>
-        </div>
       </div>
 
-      <!-- STATS -->
-      <div class="stats-row">
-        <div class="stat-card">
-          <div class="stat-num">5</div>
-          <div class="stat-label">Writeups</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num" style="color:#4ade80">5</div>
-          <div class="stat-label">HackTheBox</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num" style="color:#f87171">0</div>
-          <div class="stat-label">TryHackMe</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num" style="color:#86efac">4</div>
-          <div class="stat-label">Easy</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num" style="color:#fdba74">0</div>
-          <div class="stat-label">Medium</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num" style="color:#fca5a5">0</div>
-          <div class="stat-label">Hard</div>
-        </div>
-      </div>
-
-      <!-- LATEST WRITEUPS -->
-      <div class="section-title">Latest Writeups <a href="/writeups/">→ View All</a></div>
-      <div class="machines-grid">
-
-        <a href="/htb/linux/cap" class="machine-card">
-          <img src="/assets/icons/Cap.png" alt="Cap" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="card-icon-placeholder" style="display:none">🏴‍☠️</div>
-          <div class="card-name">Cap</div>
-          <div class="card-badges">
-            <span class="cbadge easy">Easy</span>
-            <span class="cbadge htb">HTB</span>
-            <span class="cbadge linux">Linux</span>
-          </div>
-        </a>
-
-        <a href="/htb/linux/broker" class="machine-card">
-          <img src="/assets/icons/Broker.png" alt="Broker" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="card-icon-placeholder" style="display:none">🏴‍☠️</div>
-          <div class="card-name">Broker</div>
-          <div class="card-badges">
-            <span class="cbadge easy">Easy</span>
-            <span class="cbadge htb">HTB</span>
-            <span class="cbadge linux">Linux</span>
-          </div>
-        </a>
-
-        <a href="/htb/windows/blue" class="machine-card">
-          <img src="/assets/icons/Blue.png" alt="Blue" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="card-icon-placeholder" style="display:none">🏴‍☠️</div>
-          <div class="card-name">Blue</div>
-          <div class="card-badges">
-            <span class="cbadge easy">Easy</span>
-            <span class="cbadge htb">HTB</span>
-            <span class="cbadge windows">Windows</span>
-          </div>
-        </a>
-
-        <a href="/htb/windows/legacy" class="machine-card">
-          <img src="/assets/icons/Legacy.png" alt="Legacy" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="card-icon-placeholder" style="display:none">🏴‍☠️</div>
-          <div class="card-name">Legacy</div>
-          <div class="card-badges">
-            <span class="cbadge easy">Easy</span>
-            <span class="cbadge htb">HTB</span>
-            <span class="cbadge windows">Windows</span>
-          </div>
-        </a>
-
-        <a href="/htb/windows/expressway" class="machine-card">
-          <img src="/assets/icons/Expressway.png" alt="Expressway" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="card-icon-placeholder" style="display:none">🏴‍☠️</div>
-          <div class="card-name">Expressway</div>
-          <div class="card-badges">
-            <span class="cbadge easy">Easy</span>
-            <span class="cbadge htb">HTB</span>
-            <span class="cbadge windows">Windows</span>
-          </div>
-        </a>
-
-      </div>
-
-      <!-- LATEST POSTS -->
+      <!-- LATEST POSTS first -->
       <div class="section-title">Latest Posts</div>
       <div class="posts-grid">
         <div class="post-card">
@@ -320,6 +207,41 @@ layout: none
         </div>
       </div>
 
+      <!-- LATEST WRITEUPS second -->
+      <div class="section-title">Latest Writeups <a href="/writeups/">→ View All</a></div>
+      <div class="machines-grid">
+        <a href="/htb/linux/cap" class="machine-card">
+          <img src="/assets/icons/Cap.png" alt="Cap" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="card-icon-placeholder" style="display:none">🏴‍☠️</div>
+          <div class="card-name">Cap</div>
+          <div class="card-badges"><span class="cbadge easy">Easy</span><span class="cbadge htb">HTB</span><span class="cbadge linux">Linux</span></div>
+        </a>
+        <a href="/htb/linux/broker" class="machine-card">
+          <img src="/assets/icons/Broker.png" alt="Broker" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="card-icon-placeholder" style="display:none">🏴‍☠️</div>
+          <div class="card-name">Broker</div>
+          <div class="card-badges"><span class="cbadge easy">Easy</span><span class="cbadge htb">HTB</span><span class="cbadge linux">Linux</span></div>
+        </a>
+        <a href="/htb/windows/blue" class="machine-card">
+          <img src="/assets/icons/Blue.png" alt="Blue" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="card-icon-placeholder" style="display:none">🏴‍☠️</div>
+          <div class="card-name">Blue</div>
+          <div class="card-badges"><span class="cbadge easy">Easy</span><span class="cbadge htb">HTB</span><span class="cbadge windows">Windows</span></div>
+        </a>
+        <a href="/htb/windows/legacy" class="machine-card">
+          <img src="/assets/icons/Legacy.png" alt="Legacy" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="card-icon-placeholder" style="display:none">🏴‍☠️</div>
+          <div class="card-name">Legacy</div>
+          <div class="card-badges"><span class="cbadge easy">Easy</span><span class="cbadge htb">HTB</span><span class="cbadge windows">Windows</span></div>
+        </a>
+        <a href="/htb/windows/expressway" class="machine-card">
+          <img src="/assets/icons/Expressway.png" alt="Expressway" class="card-icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="card-icon-placeholder" style="display:none">🏴‍☠️</div>
+          <div class="card-name">Expressway</div>
+          <div class="card-badges"><span class="cbadge easy">Easy</span><span class="cbadge htb">HTB</span><span class="cbadge windows">Windows</span></div>
+        </a>
+      </div>
+
     </div>
   </main>
 
@@ -338,10 +260,7 @@ layout: none
       const saved=localStorage.getItem('pwn-theme');
       if(saved){
         document.documentElement.setAttribute('data-theme',saved);
-        if(saved==='light'){
-          document.getElementById('theme-icon').textContent='☀️';
-          document.getElementById('theme-label').textContent='Light mode';
-        }
+        if(saved==='light'){document.getElementById('theme-icon').textContent='☀️';document.getElementById('theme-label').textContent='Light mode';}
       }
     })();
     const btt=document.getElementById('back-to-top');
